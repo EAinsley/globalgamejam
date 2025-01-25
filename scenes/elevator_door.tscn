@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv7mx0gm12rok"]
+[gd_scene load_steps=6 format=3 uid="uid://bv7mx0gm12rok"]
 
 [ext_resource type="Script" uid="uid://dqobdm6b2ogem" path="res://scenes/ElevatorDoor_slide.gd" id="1_tvb5y"]
 [ext_resource type="ArrayMesh" uid="uid://dupwp4mnu055t" path="res://graphics/3D/elevator_door.obj" id="2_glnf6"]
@@ -7,9 +7,15 @@
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_6hri0"]
 orm_texture = ExtResource("3_c2yi0")
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tvb5y"]
+data = PackedVector3Array(2, 3.5561, 0.0923, 2, 0, 0.0923, 0.022, 3.5561, 0.0923, 0.022, 3.5561, 0.0923, 2, 0, 0.0923, 0.022, 0, 0.0923, 2, 3.5561, -0.0923, 2, 0, -0.0923, 2, 3.5561, 0.0923, 2, 3.5561, 0.0923, 2, 0, -0.0923, 2, 0, 0.0923, 0.022, 3.5561, -0.0923, 2, 3.5561, -0.0923, 0, 3.5561, -0.0702, 0, 3.5561, -0.0702, 2, 3.5561, -0.0923, 0, 3.5561, 0.0702, 0, 3.5561, 0.0702, 2, 3.5561, -0.0923, 0.022, 3.5561, 0.0923, 0.022, 3.5561, 0.0923, 2, 3.5561, -0.0923, 2, 3.5561, 0.0923, 0, 3.5561, 0.0702, 0, 0, 0.0702, 0, 3.5561, -0.0702, 0, 3.5561, -0.0702, 0, 0, 0.0702, 0, 0, -0.0702, 0.022, 3.5561, -0.0923, 0.022, 0, -0.0923, 2, 3.5561, -0.0923, 2, 3.5561, -0.0923, 0.022, 0, -0.0923, 2, 0, -0.0923, 0.022, 3.5561, 0.0923, 0.022, 0, 0.0923, 0, 3.5561, 0.0702, 0, 3.5561, 0.0702, 0.022, 0, 0.0923, 0, 0, 0.0702, 0.022, 0, -0.0923, 0.022, 3.5561, -0.0923, 0, 0, -0.0702, 0, 0, -0.0702, 0.022, 3.5561, -0.0923, 0, 3.5561, -0.0702, 0.022, 0, -0.0923, 0, 0, -0.0702, 2, 0, -0.0923, 2, 0, -0.0923, 0, 0, -0.0702, 2, 0, 0.0923, 2, 0, 0.0923, 0, 0, -0.0702, 0.022, 0, 0.0923, 0.022, 0, 0.0923, 0, 0, -0.0702, 0, 0, 0.0702)
+
+[node name="Node3D" type="AnimatableBody3D"]
 script = ExtResource("1_tvb5y")
 
 [node name="ElevatorDoor" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_glnf6")
 surface_material_override/0 = SubResource("ORMMaterial3D_6hri0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_tvb5y")
