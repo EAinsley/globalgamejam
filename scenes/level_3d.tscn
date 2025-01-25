@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://clttg52282go4"]
+[gd_scene load_steps=8 format=3 uid="uid://clttg52282go4"]
 
-[ext_resource type="Script" uid="uid://dqoi6t47dm7xn" path="res://scripts/characters/character_manager_3d.gd" id="1_0axf4"]
-[ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="2_cy78i"]
+[ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="1_cy78i"]
 [ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="3_qa8vf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0axf4"]
@@ -32,13 +31,7 @@ environment = SubResource("Environment_qa8vf")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CharacterManager3D" type="Node3D" parent="."]
-script = ExtResource("1_0axf4")
-
-[node name="CharacterClick3D" parent="CharacterManager3D" instance=ExtResource("2_cy78i")]
-
-[node name="CharacterClick3D2" parent="CharacterManager3D" instance=ExtResource("2_cy78i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+[node name="CharacterManager3D" parent="." instance=ExtResource("1_cy78i")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.916153, 0.400829, 0, -0.400829, 0.916153, 0, 2.35781, 5.9578)

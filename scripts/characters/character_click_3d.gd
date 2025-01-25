@@ -4,10 +4,14 @@ class_name CharacterClick3D
 signal picked(node: CharacterClick3D)
 
 @export var speed: float = 100.
-@export var avoid_speed: float = 100.
+@export var avoid_speed: float = 80.
+@export var interaction_distance: float = 4.
+
 
 var velocity_xy := Vector2(0.0, 0.0)
+var colliding_characters : Array[CharacterClick3D] = []
 
+@onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
 @onready var selected = false :
 	set(value) :
@@ -30,6 +34,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if selected:
 		velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
+	else:
+		velocity_xy = Vector2.ZERO
+		for character in colliding_characters:
+			var delta_distance = global_position -  character.global_position 
+			velocity_xy.x += delta_distance.x
+			velocity_xy.y += delta_distance.z
+		velocity_xy = velocity_xy.normalized() * avoid_speed 
 	
 func _physics_process(delta: float) -> void:
 	velocity.x = velocity_xy.x * delta
@@ -43,6 +54,13 @@ func drop() -> void:
 func pick() -> void:
 	print("picked ", name)
 	selected = true
+	
+func interact(character: CharacterClick3D,  _action: String) -> bool:
+	if character.position.distance_squared_to(position) > interaction_distance_square:
+		return false
+	# TODO: add real interac action here
+	return true
+
 
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
@@ -53,12 +71,9 @@ func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, n
 
 func _on_push_area_area_entered(area: Area3D) -> void:
 	print("detect other people by", name)
-	if not selected:
-		var delta_position : Vector3 = get_parent().global_position - area.get_parent().global_position
-		velocity_xy = Vector2(delta_position.x, delta_position.z) * avoid_speed
+	colliding_characters.push_back(area.get_parent())
 	
 
 
 func _on_push_area_area_exited(area: Area3D) -> void:
-	if not selected:
-		velocity_xy = Vector2.ZERO
+	colliding_characters.erase(area.get_parent())

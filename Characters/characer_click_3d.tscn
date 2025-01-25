@@ -14,10 +14,11 @@ billboard_mode = 1
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_5cfqy")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cfqy"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_jlg1v"]
+radius = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5cfqy"]
-radius = 1.4
+radius = 2.0
 
 [node name="CharacterClick3D" type="CharacterBody3D"]
 script = ExtResource("1_1jsgr")
@@ -26,8 +27,7 @@ script = ExtResource("1_1jsgr")
 mesh = SubResource("QuadMesh_5cfqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-visible = false
-shape = SubResource("CapsuleShape3D_5cfqy")
+shape = SubResource("SphereShape3D_jlg1v")
 
 [node name="PushArea" type="Area3D" parent="."]
 collision_layer = 2

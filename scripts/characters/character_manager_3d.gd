@@ -2,6 +2,7 @@ extends Node3D
 class_name CharacterManager3D
 
 var character_picked : CharacterClick3D
+var action_picked: Node
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pick"):
