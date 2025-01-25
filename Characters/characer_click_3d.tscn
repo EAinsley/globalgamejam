@@ -57,6 +57,7 @@ shape = SubResource("SphereShape3D_5cfqy")
 
 [node name="Dialogue" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49179, 1.05048, 0)
+visible = false
 mesh = SubResource("QuadMesh_omau8")
 script = ExtResource("3_jlg1v")
 

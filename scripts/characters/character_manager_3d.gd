@@ -32,7 +32,7 @@ func _on_character_picked(new_character: CharacterClick3D) -> void:
 		new_character.pick()
 		character_picked = new_character
 	else:
-		character_picked.interact(new_character, action_picked)
+		new_character.talked_by(character_picked, action_picked)
 	
 		
 	_set_item_list_ui()
