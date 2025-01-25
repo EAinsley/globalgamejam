@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://01y6uhy0fpa"
+path="res://.godot/imported/interation high.wav-c225ee757514099ea784692c6fe21833.sample"
+
+[deps]
+
+source_file="res://sounds/interation high.wav"
+dest_files=["res://.godot/imported/interation high.wav-c225ee757514099ea784692c6fe21833.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
