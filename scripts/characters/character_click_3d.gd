@@ -3,7 +3,8 @@ class_name CharacterClick3D
 
 signal picked(node: CharacterClick3D)
 
-@export var speed: float = 200.
+@export var speed: float = 100.
+@export var avoid_speed: float = 100.
 
 var velocity_xy := Vector2(0.0, 0.0)
 
@@ -27,17 +28,17 @@ func _ready() -> void:
 	selected = false
 
 func _process(delta: float) -> void:
-	velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * delta * speed
+	if selected:
+		velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	
 func _physics_process(delta: float) -> void:
-	if not selected:
-		return
-	velocity.x = velocity_xy.x
-	velocity.z = velocity_xy.y
+	velocity.x = velocity_xy.x * delta
+	velocity.z = velocity_xy.y * delta
 	move_and_slide()
 	
 func drop() -> void: 
 	selected = false
+	velocity_xy = Vector2.ZERO
 
 func pick() -> void:
 	print("picked ", name)
@@ -48,3 +49,16 @@ func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, n
 	if event.is_action_pressed("pick"):
 		print("clicked", name)
 		picked.emit(self)
+
+
+func _on_push_area_area_entered(area: Area3D) -> void:
+	print("detect other people by", name)
+	if not selected:
+		var delta_position : Vector3 = get_parent().global_position - area.get_parent().global_position
+		velocity_xy = Vector2(delta_position.x, delta_position.z) * avoid_speed
+	
+
+
+func _on_push_area_area_exited(area: Area3D) -> void:
+	if not selected:
+		velocity_xy = Vector2.ZERO
