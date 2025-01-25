@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7vvbdd3qv8v2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bojbv0njk6xiw" path="res://graphics/3D/bubble.obj" id="1_2vdav"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm753"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+roughness = 0.0
+refraction_enabled = true
+refraction_scale = 0.02
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Bubble" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_2vdav")
+surface_material_override/0 = SubResource("StandardMaterial3D_pm753")
