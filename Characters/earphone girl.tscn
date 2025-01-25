@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c626r1uiwf54c"]
+
+[ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_ipro1"]
+[ext_resource type="Texture2D" uid="uid://d0mt538cw2fn4" path="res://pictures/1.png" id="2_4w73r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2kwpo"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_4w73r")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_5fi3a"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_2kwpo")
+size = Vector2(1, 1.4)
+
+[node name="CharacterClick3D" instance=ExtResource("1_ipro1")]
+
+[node name="Appearance" parent="." index="0"]
+mesh = SubResource("QuadMesh_5fi3a")
