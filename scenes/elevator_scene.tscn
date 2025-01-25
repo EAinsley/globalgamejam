@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://68lnmoq6g566"]
+
+[ext_resource type="ArrayMesh" uid="uid://c0ykiwxfvv4wb" path="res://graphics/3D/elevator_scene.obj" id="1_arhv6"]
+[ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="2_va0gh"]
+[ext_resource type="ArrayMesh" uid="uid://dupwp4mnu055t" path="res://graphics/3D/elevator_door.obj" id="3_he2ak"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_he2ak"]
+orm_texture = ExtResource("2_va0gh")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ElevatorScene" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_arhv6")
+surface_material_override/3 = SubResource("ORMMaterial3D_he2ak")
+surface_material_override/6 = SubResource("ORMMaterial3D_he2ak")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200985, 5.29323, 7.47258)
+light_energy = 5.929
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0502684, 3.22916, -2.85985)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="ElevatorDoor" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_he2ak")
+surface_material_override/0 = SubResource("ORMMaterial3D_he2ak")
+
+[node name="ElevatorDoor2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("3_he2ak")
+surface_material_override/0 = SubResource("ORMMaterial3D_he2ak")
