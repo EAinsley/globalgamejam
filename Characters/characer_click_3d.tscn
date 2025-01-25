@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvdoki62xebsy"]
+[gd_scene load_steps=12 format=3 uid="uid://dvdoki62xebsy"]
 
 [ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
 [ext_resource type="Script" uid="uid://dy5kpa65lpalo" path="res://scripts/characters/dialogue.gd" id="3_jlg1v"]
+[ext_resource type="PackedScene" uid="uid://c7vvbdd3qv8v2" path="res://scenes/bubble.tscn" id="4_omau8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
 resource_local_to_scene = true
@@ -20,11 +21,12 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_5cfqy")
 size = Vector2(1, 1.4)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jlg1v"]
-radius = 1.0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_omau8"]
+radius = 0.353014
+height = 1.23554
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5cfqy"]
-radius = 2.0
+radius = 1.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5cfqy"]
 viewport_path = NodePath("Dialogue/SubViewport")
@@ -46,7 +48,7 @@ script = ExtResource("1_1jsgr")
 mesh = SubResource("QuadMesh_5cfqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_jlg1v")
+shape = SubResource("CapsuleShape3D_omau8")
 
 [node name="PushArea" type="Area3D" parent="."]
 collision_layer = 2
@@ -101,6 +103,9 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="Dialogue"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Node3D" parent="." instance=ExtResource("4_omau8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402009, 0.958694, 0.0289819)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="PushArea" to="." method="_on_push_area_area_entered"]

@@ -1,5 +1,5 @@
 
-extends Node3D
+extends AnimatableBody3D
 
 var time;
 var startPos;
