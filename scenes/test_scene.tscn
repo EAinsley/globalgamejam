@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dpimkhwxb53m6"]
+[gd_scene load_steps=2 format=3 uid="uid://dpimkhwxb53m6"]
+
+[ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="1_g7g4h"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,3 +16,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Test scene
 "
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="UILayer" instance=ExtResource("1_g7g4h")]
