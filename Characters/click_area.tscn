@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4m1rxvcjh6c"]
+
+[ext_resource type="Script" uid="uid://k3cno7kttrnn" path="res://scripts/characters/click_area.gd" id="1_ybe8l"]
+
+[node name="ClickArea" type="Area2D"]
+script = ExtResource("1_ybe8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 0.5)

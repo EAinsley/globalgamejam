@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba6l2khi7eaby"]
+[gd_scene load_steps=6 format=3 uid="uid://ba6l2khi7eaby"]
 
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="1_acr0g"]
-[ext_resource type="Script" uid="uid://ch158jrtiqhu2" path="res://scripts/characters/character.gd" id="1_ticvp"]
-[ext_resource type="Script" uid="uid://k3cno7kttrnn" path="res://scripts/characters/click_area.gd" id="3_3mn46"]
+[ext_resource type="Script" uid="uid://ch158jrtiqhu2" path="res://scripts/characters/character_drag.gd" id="1_ticvp"]
+[ext_resource type="PackedScene" uid="uid://dh4m1rxvcjh6c" path="res://Characters/click_area.tscn" id="3_3mn46"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ticvp"]
 animations = [{
@@ -18,28 +18,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_acr0g"]
-size = Vector2(172, 141)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ticvp"]
 radius = 111.198
 
 [node name="Character" type="RigidBody2D"]
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 5
 script = ExtResource("1_ticvp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_ticvp")
 
-[node name="ClickArea" type="Area2D" parent="."]
-script = ExtResource("3_3mn46")
+[node name="ClickArea" parent="." instance=ExtResource("3_3mn46")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
-position = Vector2(7, 0.5)
-shape = SubResource("RectangleShape2D_acr0g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="BubbleCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ticvp")
 
-[connection signal="clicked" from="ClickArea" to="." method="_on_click_area_clicked"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

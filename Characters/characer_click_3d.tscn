@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvdoki62xebsy"]
+
+[ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
+[ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_5cfqy")
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_5cfqy"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_5cfqy")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5cfqy"]
+
+[node name="CharacterClick3D" type="CharacterBody3D"]
+script = ExtResource("1_1jsgr")
+
+[node name="Appearance" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5cfqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5cfqy")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
