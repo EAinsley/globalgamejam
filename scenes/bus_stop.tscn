@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ga87emry4rb"]
+
+[ext_resource type="ArrayMesh" uid="uid://ck3hpsm4gwrk1" path="res://graphics/3D/scene_around_busstop.obj" id="1_jt85a"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_nbpj8"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_mt65r"]
+albedo_color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.503394, 0.191184, -0.842641, -0.203219, 0.974055, 0.099597, 0.839819, 0.121104, 0.529185, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SceneAroundBusstop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0378403, 0, 0.29987)
+mesh = ExtResource("1_jt85a")
+surface_material_override/0 = SubResource("ORMMaterial3D_nbpj8")
+surface_material_override/1 = SubResource("ORMMaterial3D_mt65r")
