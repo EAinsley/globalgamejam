@@ -5,10 +5,13 @@ signal picked(node: CharacterClick3D)
 
 @export var speed: float = 100.
 @export var avoid_speed: float = 80.
+@export var interaction_distance: float = 4.
+
 
 var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
 
+@onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
 @onready var selected = false :
 	set(value) :
@@ -52,6 +55,11 @@ func pick() -> void:
 	print("picked ", name)
 	selected = true
 	
+func interact(character: CharacterClick3D,  _action: String) -> bool:
+	if character.position.distance_squared_to(position) > interaction_distance_square:
+		return false
+	# TODO: add real interac action here
+	return true
 
 
 
