@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd764adg7jhbl"]
 
-[ext_resource type="Script" uid="uid://dg6tvq3xcue4" path="res://scripts/characters/characters_manager.gd" id="2_m7ahb"]
+[ext_resource type="Script" uid="uid://dg6tvq3xcue4" path="res://not_used/characters_manager.gd" id="2_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="2_wwpf4"]
-[ext_resource type="PackedScene" uid="uid://bkdkb2vphqutu" path="res://Characters/character_click.tscn" id="3_m7ahb"]
+[ext_resource type="PackedScene" uid="uid://bkdkb2vphqutu" path="res://not_used/character_click.tscn" id="3_m7ahb"]
 
 [node name="Level" type="Node2D"]
 

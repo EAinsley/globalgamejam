@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://clttg52282go4"]
+[gd_scene load_steps=9 format=3 uid="uid://clttg52282go4"]
 
 [ext_resource type="Script" uid="uid://dqoi6t47dm7xn" path="res://scripts/characters/character_manager_3d.gd" id="1_0axf4"]
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="2_cy78i"]
+[ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="3_qa8vf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0axf4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -51,3 +52,7 @@ mesh = SubResource("BoxMesh_cy78i")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.47629, 0)
 shape = SubResource("ConcavePolygonShape3D_cy78i")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="UILayer" instance=ExtResource("3_qa8vf")]
