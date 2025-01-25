@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvdoki62xebsy"]
+[gd_scene load_steps=11 format=3 uid="uid://dvdoki62xebsy"]
 
 [ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
+[ext_resource type="Script" uid="uid://dy5kpa65lpalo" path="res://scripts/characters/dialogue.gd" id="3_jlg1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
 resource_local_to_scene = true
@@ -25,7 +26,20 @@ radius = 1.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_5cfqy"]
 radius = 2.0
 
-[node name="CharacterClick3D" type="CharacterBody3D"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5cfqy"]
+viewport_path = NodePath("Dialogue/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlg1v"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5cfqy")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_omau8"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_jlg1v")
+size = Vector2(2, 1)
+
+[node name="CharacterClick3D2" type="CharacterBody3D"]
 script = ExtResource("1_1jsgr")
 
 [node name="Appearance" type="MeshInstance3D" parent="."]
@@ -42,6 +56,53 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PushArea"]
 shape = SubResource("SphereShape3D_5cfqy")
 
+[node name="Dialogue" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49179, 1.05048, 0)
+visible = false
+mesh = SubResource("QuadMesh_omau8")
+script = ExtResource("3_jlg1v")
+
+[node name="SubViewport" type="SubViewport" parent="Dialogue"]
+size = Vector2i(200, 100)
+
+[node name="Control" type="Control" parent="Dialogue/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Dialogue/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Dialogue/SubViewport/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sentence" type="Label" parent="Dialogue/SubViewport/Control/Panel/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Example Text!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Dialogue"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="PushArea" to="." method="_on_push_area_area_entered"]
 [connection signal="area_exited" from="PushArea" to="." method="_on_push_area_area_exited"]
+[connection signal="timeout" from="Dialogue/Timer" to="Dialogue" method="_on_timer_timeout"]

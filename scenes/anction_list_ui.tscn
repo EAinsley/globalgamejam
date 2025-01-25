@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://btvuk3kqs6vsc"]
+
+[ext_resource type="Script" uid="uid://b33v0i3msj3io" path="res://scripts/ui/anction_list_ui.gd" id="2_ioppk"]
+
+[node name="ActionList" type="ItemList" groups=["ActionList"]]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+auto_width = true
+auto_height = true
+max_columns = 10
+same_column_width = true
+icon_mode = 0
+script = ExtResource("2_ioppk")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

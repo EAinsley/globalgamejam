@@ -1,7 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://clttg52282go4"]
+[gd_scene load_steps=17 format=3 uid="uid://clttg52282go4"]
 
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="1_cy78i"]
+[ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="2_cy78i"]
+[ext_resource type="PackedScene" uid="uid://btvuk3kqs6vsc" path="res://scenes/anction_list_ui.tscn" id="3_hqk1j"]
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="3_mta3c"]
 [ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="3_qa8vf"]
+[ext_resource type="Script" uid="uid://g83osdtyc5h7" path="res://resources/small_response.gd" id="5_0352p"]
+[ext_resource type="Resource" uid="uid://dlba7bdcobv4s" path="res://resources/fika_talk.tres" id="5_mta3c"]
+[ext_resource type="Resource" uid="uid://bj6jokgia4psx" path="res://resources/bird_talk.tres" id="5_rsk3g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0axf4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,6 +21,24 @@ background_mode = 2
 sky = SubResource("Sky_cy78i")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_rsk3g"]
+script = ExtResource("5_0352p")
+small_talk = ExtResource("5_rsk3g")
+response_type = 0
+metadata/_custom_type_script = ExtResource("5_0352p")
+
+[sub_resource type="Resource" id="Resource_0352p"]
+script = ExtResource("5_0352p")
+small_talk = ExtResource("5_rsk3g")
+response_type = 0
+metadata/_custom_type_script = ExtResource("5_0352p")
+
+[sub_resource type="Resource" id="Resource_1f0us"]
+script = ExtResource("5_0352p")
+small_talk = ExtResource("5_mta3c")
+response_type = 1
+metadata/_custom_type_script = ExtResource("5_0352p")
 
 [sub_resource type="BoxMesh" id="BoxMesh_cy78i"]
 size = Vector3(10, 0.1, 10)
@@ -32,6 +56,15 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="CharacterManager3D" parent="." instance=ExtResource("1_cy78i")]
+
+[node name="CharacterClick3D2" parent="CharacterManager3D" instance=ExtResource("2_cy78i")]
+action_list = Array[ExtResource("3_mta3c")]([ExtResource("5_rsk3g"), ExtResource("5_mta3c")])
+response_list = Array[ExtResource("5_0352p")]([SubResource("Resource_rsk3g")])
+
+[node name="CharacterClick3D3" parent="CharacterManager3D" instance=ExtResource("2_cy78i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+action_list = Array[ExtResource("3_mta3c")]([ExtResource("5_mta3c")])
+response_list = Array[ExtResource("5_0352p")]([SubResource("Resource_0352p"), SubResource("Resource_1f0us")])
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.916153, 0.400829, 0, -0.400829, 0.916153, 0, 2.35781, 5.9578)
@@ -60,3 +93,5 @@ shape = SubResource("ConcavePolygonShape3D_cy78i")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="InGameMenu" parent="UILayer" instance=ExtResource("3_qa8vf")]
+
+[node name="ActionList" parent="UILayer" instance=ExtResource("3_hqk1j")]

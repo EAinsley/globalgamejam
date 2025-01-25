@@ -5,14 +5,19 @@ signal picked(node: CharacterClick3D)
 
 @export var speed: float = 100.
 @export var avoid_speed: float = 80.
-@export var interaction_distance: float = 4.
-
+@export var interaction_distance: float = 5.
+@export var action_list: Array[SmallTalk]
+@export var response_list: Array[SmallResponse]
+@export var default_text: String = "Who are you?"
 
 var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
 
 @onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
+@onready var sentence: Label = %Sentence
+@onready var dialogue: Dialogue = $Dialogue
+
 @onready var selected = false :
 	set(value) :
 		print("set slected: ", value)
@@ -55,11 +60,26 @@ func pick() -> void:
 	print("picked ", name)
 	selected = true
 	
-func interact(character: CharacterClick3D,  _action: String) -> bool:
+func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
+	print("interact")
 	if character.position.distance_squared_to(position) > interaction_distance_square:
+		character.dialogue.say("Too far")
 		return false
-	# TODO: add real interac action here
+	for response in response_list:
+		print("trying ", character.response_list.size(), " ", response.small_talk.name)
+		if response.small_talk.name == action.name:
+			print("found response")
+			match response.response_type:
+				SmallResponse.RESPONSE_TYPE.GOOD:
+					dialogue.say(response.small_talk.good_responses.pick_random())
+				SmallResponse.RESPONSE_TYPE.BAD:
+					dialogue.say(response.small_talk.bad_responses.pick_random())
+				SmallResponse.RESPONSE_TYPE.MEDIUM:
+					dialogue.say(response.small_talk.medium_reponses.pick_random())
+			return true
+	dialogue.say(default_text)
 	return true
+
 
 
 
