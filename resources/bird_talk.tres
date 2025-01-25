@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://bj6jokgia4psx"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_n1xcp"]
+
+[resource]
+script = ExtResource("1_n1xcp")
+name = &"Talk abou bird"
+good_responses = Array[String](["I like birds"])
+bad_responses = Array[String](["I don't like birds."])
+medium_reponses = Array[String](["I have no feeling."])
+metadata/_custom_type_script = ExtResource("1_n1xcp")
