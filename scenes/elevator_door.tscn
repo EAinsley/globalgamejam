@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv7mx0gm12rok"]
+
+[ext_resource type="Script" uid="uid://dqobdm6b2ogem" path="res://scenes/ElevatorDoor_slide.gd" id="1_tvb5y"]
+[ext_resource type="ArrayMesh" uid="uid://dupwp4mnu055t" path="res://graphics/3D/elevator_door.obj" id="2_glnf6"]
+[ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="3_c2yi0"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_6hri0"]
+orm_texture = ExtResource("3_c2yi0")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_tvb5y")
+
+[node name="ElevatorDoor" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_glnf6")
+surface_material_override/0 = SubResource("ORMMaterial3D_6hri0")
