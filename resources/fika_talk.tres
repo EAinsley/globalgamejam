@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://dlba7bdcobv4s"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_mldr5"]
+[ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="1_yrhts"]
+
+[resource]
+script = ExtResource("1_mldr5")
+name = &"Talk about fika"
+good_responses = Array[String](["I like fika."])
+bad_responses = Array[String](["I don't like fika."])
+medium_reponses = Array[String](["Ok."])
+icon = ExtResource("1_yrhts")
+metadata/_custom_type_script = ExtResource("1_mldr5")

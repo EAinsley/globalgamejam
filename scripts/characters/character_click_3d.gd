@@ -14,6 +14,9 @@ var colliding_characters : Array[CharacterClick3D] = []
 
 @onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
+@onready var sentence: Label = %Sentence
+@onready var dialogue: Dialogue = $Dialogue
+
 @onready var selected = false :
 	set(value) :
 		print("set slected: ", value)
@@ -59,12 +62,13 @@ func pick() -> void:
 func interact(character: CharacterClick3D,  action: SmallTalk) -> bool:
 	print("interact")
 	if character.position.distance_squared_to(position) > interaction_distance_square:
-		print("Too far")
+		dialogue.say("Too far")
 		return false
 	for response in response_list:
 		if response.small_talk.name == action.name:
 			print("He think it's: ", response.response_type)
 	return true
+
 
 
 

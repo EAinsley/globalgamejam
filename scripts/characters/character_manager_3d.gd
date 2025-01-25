@@ -10,9 +10,6 @@ var action_list_ui: ActionList :
 			if action_list_ui:
 				action_list_ui.item_selected.connect(_on_action_picked)
 		return action_list_ui
-		
-	
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("release"):

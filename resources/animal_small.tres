@@ -1,13 +1,23 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://p2uvcc0hibf5"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://p2uvcc0hibf5"]
 
-[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_5mn6u"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="1_ka6rn"]
 
+[sub_resource type="GDScript" id="GDScript_5mn6u"]
+script/source = "extends Resource
+class_name SmallTalk
+
+@export var name: StringName
+@export var good_responses: Array[String]
+@export var bad_responses: Array[String]
+@export var medium_reponses: Array[String] # might not needed
+@export var icon: CompressedTexture2D
+"
+
 [resource]
-script = ExtResource("1_5mn6u")
+script = SubResource("GDScript_5mn6u")
 name = &"Talk about animals"
 good_responses = Array[String](["I like animals."])
 bad_responses = Array[String](["Don't talk to me like that."])
 medium_reponses = Array[String](["Fine."])
 icon = ExtResource("1_ka6rn")
-metadata/_custom_type_script = ExtResource("1_5mn6u")
+metadata/_custom_type_script = SubResource("GDScript_5mn6u")
