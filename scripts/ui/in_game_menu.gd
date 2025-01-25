@@ -3,7 +3,7 @@ extends Control
 func _ready() -> void:
 	visible = false
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.is_action_pressed("ui_cancel"):
 			if !visible:
@@ -12,7 +12,8 @@ func _unhandled_input(event):
 			else:
 				get_tree().paused = false
 				visible = false
-
+			
+				
 
 func _on_continue_button_pressed() -> void:
 	get_tree().paused = false
