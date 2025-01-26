@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://4d5q1cimvoq"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://4d5q1cimvoq"]
 
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_dllia"]
+[ext_resource type="Texture2D" uid="uid://b5dtoyfpbm55v" path="res://pictures/icons/reading.png" id="1_vredg"]
 
 [resource]
 script = ExtResource("1_dllia")
@@ -8,4 +9,5 @@ name = &"reading"
 good_responses = Array[String](["I absolutely love reading! It’s a great way to escape into different worlds and expand my knowledge.", "Reading is one of my favorite hobbies; it helps me relax and also learn new things.", "I’m passionate about reading, especially fiction; it’s amazing how books can transport you to another place and time."])
 bad_responses = Array[String](["I don’t really enjoy reading; I find it hard to focus on books.", "Reading feels like a chore to me; I prefer other activities that are more engaging.", "I’ve never been into reading; I’d rather watch something or do something else."])
 medium_reponses = Array[String](["I enjoy reading occasionally, but it’s not something I do all the time.", "Reading is fine, but I’m not always in the mood for it.", "I read from time to time, usually when I have some free time, but it’s not my top priority."])
+icon = ExtResource("1_vredg")
 metadata/_custom_type_script = ExtResource("1_dllia")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://bkntjtf3q27wa"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://bkntjtf3q27wa"]
 
+[ext_resource type="Texture2D" uid="uid://n74fegeqs2y4" path="res://pictures/icons/music.png" id="1_6kkka"]
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_mpftr"]
 
 [resource]
@@ -8,4 +9,5 @@ name = &"music"
 good_responses = Array[String](["I absolutely love music; it helps me relax and brings me joy!", "Music is a big part of my life; I listen to it every single day!", "I love playing instruments; music expresses emotions that words cannot convey."])
 bad_responses = Array[String](["I’m not interested in music; it doesn’t appeal to me.", "Some music is too noisy; I can’t stand it at all.", "I think music is meaningless; it’s just noise to me."])
 medium_reponses = Array[String](["Music is okay; I listen to it occasionally, but not every day.", "Some music is nice, but not all styles suit me.", "I’m not passionate about music, but having it in the background is nice."])
+icon = ExtResource("1_6kkka")
 metadata/_custom_type_script = ExtResource("1_mpftr")

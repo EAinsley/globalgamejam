@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://1boa5x06shhh"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://1boa5x06shhh"]
 
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_agywn"]
+[ext_resource type="Texture2D" uid="uid://4jiycnqdpxj7" path="res://pictures/icons/sports.png" id="1_ejflc"]
 
 [resource]
 script = ExtResource("1_agywn")
@@ -8,4 +9,5 @@ name = &"sports"
 good_responses = Array[String](["I really love sports, especially running and basketball; they make me feel so energized!", "I go to the gym every week; sports are a great way to stay healthy.", "I enjoy team sports; it's always fun to play with friends."])
 bad_responses = Array[String](["I don’t like sports; I always find them tiring.", "I’m not really interested in sports; they don’t seem meaningful to me.", "I find sports boring; staying home and watching TV is way more comfortable."])
 medium_reponses = Array[String](["I exercise occasionally, just enough to keep in decent shape.", "Sports aren’t the main focus of my life, but joining some activities once in a while is fine.", "I’m a bit interested in sports, but not overly passionate about them."])
+icon = ExtResource("1_ejflc")
 metadata/_custom_type_script = ExtResource("1_agywn")

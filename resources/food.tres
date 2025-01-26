@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://dkl7d77w7am0e"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://dkl7d77w7am0e"]
 
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_j6d7s"]
+[ext_resource type="Texture2D" uid="uid://dr6ggkvhsqvdh" path="res://pictures/icons/food.png" id="1_vuuqq"]
 
 [resource]
 script = ExtResource("1_j6d7s")
@@ -8,4 +9,5 @@ name = &"food"
 good_responses = Array[String](["I absolutely love food! Trying new dishes always excites me!", "Cooking is such a joy; I love experimenting with new recipes.", "Good food is an essential part of life; I enjoy discovering new restaurants."])
 bad_responses = Array[String](["I’m not really into eating; it doesn’t feel special to me.", "Thinking about what to eat every day is so annoying.", "There are so many foods I dislike; I feel like I have very few options."])
 medium_reponses = Array[String](["Food is just a necessity to survive; I don’t have any special feelings about it.", "I’m not picky about food; I’m fine with simple meals.", "Food is okay; as long as I eat healthily, I’m good."])
+icon = ExtResource("1_vuuqq")
 metadata/_custom_type_script = ExtResource("1_j6d7s")

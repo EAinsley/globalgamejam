@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://nxardpieynqe"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://nxardpieynqe"]
 
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_b4n7v"]
+[ext_resource type="Texture2D" uid="uid://8g5yfl3dacdk" path="res://pictures/icons/fashion.png" id="1_lnkwq"]
 
 [resource]
 script = ExtResource("1_b4n7v")
@@ -8,4 +9,5 @@ name = &"fashion"
 good_responses = Array[String](["I love fashion! It’s a great way to express my personality and creativity.", "Fashion allows me to experiment with different styles and feel confident.", "I enjoy keeping up with the latest trends; fashion is so exciting and ever-evolving!"])
 bad_responses = Array[String](["I don’t care much for fashion; I’d rather wear what’s comfortable.", "Fashion can be too complicated for me; I prefer to keep things simple.", "I find fashion a bit superficial and prefer not to pay much attention to it."])
 medium_reponses = Array[String](["I like fashion to some extent, but I don’t focus on it too much.", "Fashion is fine, but I don’t spend too much time thinking about it.", "I’m not really obsessed with fashion, but I enjoy looking presentable."])
+icon = ExtResource("1_lnkwq")
 metadata/_custom_type_script = ExtResource("1_b4n7v")

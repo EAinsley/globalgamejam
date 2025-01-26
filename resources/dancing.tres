@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://tqlaj62l66jy"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://tqlaj62l66jy"]
 
+[ext_resource type="Texture2D" uid="uid://bkr3nwq4jll11" path="res://pictures/icons/dancing.png" id="1_jxabs"]
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_yju73"]
 
 [resource]
@@ -8,4 +9,5 @@ name = &"dancing"
 good_responses = Array[String](["I absolutely love dancing! It’s such a great way to express myself and have fun.", "Dancing brings so much joy to my life; I feel free and energized when I move to the music.", "I enjoy dancing at parties or with friends—it’s a fantastic way to connect and have a good time!"])
 bad_responses = Array[String](["I don’t like dancing at all—it feels awkward and uncomfortable for me.", "I’ve never really enjoyed dancing; it’s just not my thing.", "Dancing isn’t something I find enjoyable; I prefer other activities."])
 medium_reponses = Array[String](["I like dancing occasionally, but I’m not really someone who dances all the time.", "I don’t mind dancing, but it’s not something I seek out unless I’m with others.", "I can dance if needed, but I’m not passionate about it."])
+icon = ExtResource("1_jxabs")
 metadata/_custom_type_script = ExtResource("1_yju73")

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://dlevr78dwgetk"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://dlevr78dwgetk"]
 
+[ext_resource type="Texture2D" uid="uid://blelya2jnakh6" path="res://pictures/icons/education.png" id="1_dnn85"]
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_mxhxu"]
 
 [resource]
@@ -8,4 +9,5 @@ name = &"education"
 good_responses = Array[String](["I believe education is one of the most powerful tools for personal growth and change in society!", "I love learning new things, and education is key to expanding my horizons.", "Education plays such an important role in shaping our future, and I’m always eager to keep learning."])
 bad_responses = Array[String](["I don’t think education always prepares us for real-life challenges; sometimes it feels disconnected.", "I’m not a fan of traditional education systems; they seem too rigid for my liking.", "I find education sometimes to be boring and feel like it doesn’t match my interests."])
 medium_reponses = Array[String](["Education is important, but sometimes I feel like it can be a bit overwhelming.", "I see education as a way to get opportunities, but I’m not always passionate about it.", "I think education has its benefits, but it’s not always the most exciting part of life for me."])
+icon = ExtResource("1_dnn85")
 metadata/_custom_type_script = ExtResource("1_mxhxu")

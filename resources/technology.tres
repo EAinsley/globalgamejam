@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://dawr3ve3t7u1h"]
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=3 format=3 uid="uid://dawr3ve3t7u1h"]
 
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_6bwbi"]
+[ext_resource type="Texture2D" uid="uid://d21d6i1asvcy2" path="res://pictures/icons/technology.png" id="1_r4hs4"]
 
 [resource]
 script = ExtResource("1_6bwbi")
@@ -8,4 +9,5 @@ name = &"technology"
 good_responses = Array[String](["I’m really passionate about technology; it’s amazing how it transforms the world and improves our lives.", "Technology has made so many aspects of life easier and more efficient, and I love staying up-to-date with the latest advancements.", "I find technology incredibly exciting, especially how it continues to innovate and push the boundaries of what’s possible."])
 bad_responses = Array[String](["I feel overwhelmed by technology; it’s constantly changing and hard to keep up with.", "Technology can be a bit too much sometimes; it feels like it controls too many aspects of our lives.", "I don’t like how reliant we’ve become on technology; it makes everything feel less personal."])
 medium_reponses = Array[String](["Technology is useful, but I don’t spend too much time thinking about it.", "I use technology regularly, but I’m not that invested in all the latest gadgets.", "Technology has its pros and cons, but I think it’s mostly just a tool for everyday life."])
+icon = ExtResource("1_r4hs4")
 metadata/_custom_type_script = ExtResource("1_6bwbi")
