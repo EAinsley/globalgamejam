@@ -2,8 +2,8 @@
 
 [ext_resource type="ArrayMesh" uid="uid://c0ykiwxfvv4wb" path="res://graphics/3D/elevator_scene.obj" id="1_arhv6"]
 [ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="2_va0gh"]
-[ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/items/plant.png" id="4_twtuf"]
-[ext_resource type="PackedScene" uid="uid://bv7mx0gm12rok" path="res://scenes/elevator_door.tscn" id="5_c4ta5"]
+[ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/plant.png" id="4_twtuf"]
+[ext_resource type="PackedScene" path="res://scenes/elevator_door.tscn" id="5_c4ta5"]
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="6_kjhgt"]
 [ext_resource type="PackedScene" uid="uid://cnonyioviem5" path="res://Characters/artist girl.tscn" id="7_up3cx"]
 [ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="8_jbja3"]
@@ -87,7 +87,7 @@ transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 
 [node name="CharacterManager3D" parent="." instance=ExtResource("6_kjhgt")]
 
 [node name="CharacterClick3D" parent="CharacterManager3D" instance=ExtResource("7_up3cx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37556, 0.670843, 1.02866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37556, 0.644597, 1.02866)
 action_list = Array[ExtResource("8_jbja3")]([ExtResource("9_1c8xy")])
 response_list = Array[ExtResource("10_o13ub")]([SubResource("Resource_akvho")])
 

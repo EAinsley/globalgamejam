@@ -13,11 +13,13 @@ signal picked(node: CharacterClick3D)
 var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
 var animationTime = 0.0
+var bubble_colliding_characters: Array[CharacterClick3D] = []
 
 @onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
 @onready var sentence: Label = %Sentence
 @onready var dialogue: Dialogue = $Dialogue
+@onready var bubble: Area3D = $Bubble
 
 @onready var selected = false :
 	set(value) :
@@ -55,7 +57,17 @@ func _process(delta: float) -> void:
 		appearance.mesh.material.set_uv1_scale(Vector3(sign(velocity.x), 1.0, 1.0))
 	
 	if selected:
-		velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
+		if not bubble_colliding_characters.is_empty():
+			velocity_xy = Vector2.ZERO
+			for character in colliding_characters:
+				var delta_distance = global_position -  character.global_position 
+				velocity_xy.x += delta_distance.x
+				velocity_xy.y += delta_distance.z
+			velocity_xy = velocity_xy.normalized() * avoid_speed
+			print("pushed away", bubble_colliding_characters)
+		else:
+			velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
+		
 	else:
 		velocity_xy = Vector2.ZERO
 		for character in colliding_characters:
@@ -72,10 +84,13 @@ func _physics_process(delta: float) -> void:
 func drop() -> void: 
 	selected = false
 	velocity_xy = Vector2.ZERO
+	bubble.set_collision_mask_value(3, true)
 
 func pick() -> void:
 	print("picked ", name)
 	selected = true
+	bubble_colliding_characters.clear()
+	bubble.set_collision_mask_value(3, true)
 	
 func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 	print("interact")
@@ -114,3 +129,13 @@ func _on_push_area_area_entered(area: Area3D) -> void:
 
 func _on_push_area_area_exited(area: Area3D) -> void:
 	colliding_characters.erase(area.get_parent())
+
+
+func _on_node_3d_area_entered(area: Area3D) -> void:
+	print("detect bubble enter")
+	bubble_colliding_characters.push_back(area.get_parent())
+
+
+func _on_bubble_area_exited(area: Area3D) -> void:
+	print("detect bubble exit")
+	bubble_colliding_characters.erase(area.get_parent())

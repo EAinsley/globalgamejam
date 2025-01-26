@@ -104,10 +104,11 @@ vertical_alignment = 1
 wait_time = 2.0
 one_shot = true
 
-[node name="Node3D" parent="." instance=ExtResource("4_omau8")]
+[node name="Bubble" parent="." instance=ExtResource("4_omau8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402009, 0.958694, 0.0289819)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="PushArea" to="." method="_on_push_area_area_entered"]
 [connection signal="area_exited" from="PushArea" to="." method="_on_push_area_area_exited"]
 [connection signal="timeout" from="Dialogue/Timer" to="Dialogue" method="_on_timer_timeout"]
+[connection signal="area_entered" from="Bubble" to="." method="_on_node_3d_area_entered"]

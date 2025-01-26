@@ -43,5 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0170055, -0.0405653, -0.01
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_cqt7n")
 
-[node name="Node3D" parent="." index="4"]
-visible = false
+[node name="Bubble" parent="." index="4"]
+collision_mask = 0
+
+[connection signal="area_exited" from="Bubble" to="." method="_on_bubble_area_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtj5dwvsrkqwj"]
+[gd_scene load_steps=9 format=3 uid="uid://bic1v1g7feveo"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_kbedo"]
 [ext_resource type="Texture2D" uid="uid://b0fkhpl3frv58" path="res://pictures/character pictures/12.png" id="2_ccj66"]
@@ -19,7 +19,29 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_aj616")
 size = Vector2(1, 1.4)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_jlg1v"]
+radius = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kbedo"]
+viewport_path = NodePath("Dialogue/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccj66"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_kbedo")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_dutyx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ccj66")
+size = Vector2(2, 1)
+
 [node name="CharacterClick3D" instance=ExtResource("1_kbedo")]
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_gcw3g")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("SphereShape3D_jlg1v")
+
+[node name="Dialogue" parent="." index="3"]
+mesh = SubResource("QuadMesh_dutyx")
