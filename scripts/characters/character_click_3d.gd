@@ -12,6 +12,7 @@ signal picked(node: CharacterClick3D)
 
 var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
+var animationTime = 0.0
 
 @onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
@@ -27,6 +28,9 @@ var colliding_characters : Array[CharacterClick3D] = []
 		else:
 			appearance.mesh.material.emission_enabled = false
 			
+func _init() -> void:
+	animationTime = randf() * 20.0;
+	
 func _enter_tree() -> void:
 	var parent = get_parent()
 	if parent is CharacterManager3D:
@@ -37,6 +41,19 @@ func _ready() -> void:
 	selected = false
 
 func _process(delta: float) -> void:
+	animationTime += delta
+	var AnimationPosition = Vector3(0.0, 0.0, 0.0);
+	# Walk animation
+	AnimationPosition += Vector3(0.0, abs(cos((animationTime * 5.0) * PI)) * 0.025 * min(1.0, (velocity * Vector3(1.0, 0.0, 1.0)).length()), 0.0);
+	# Idle animation
+	AnimationPosition += Vector3(cos((animationTime * 0.32) * PI), cos((animationTime * 1.0) * PI), 0.0) * 0.014;
+	
+	appearance.position = AnimationPosition;
+	
+	# Flip to walking direction
+	if abs(velocity.x) > 0.1:
+		appearance.mesh.material.set_uv1_scale(Vector3(sign(velocity.x), 1.0, 1.0))
+	
 	if selected:
 		velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	else:
