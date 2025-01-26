@@ -69,7 +69,7 @@ func _on_goal_area_body_entered(body: Node3D) -> void:
 		print("inside number add")
 		if now_inside_number >= charaters_number:
 			print("You win")
-			won.emit()
+			won.emit(next_level)
 
 
 func _on_goal_area_body_exited(body: Node3D) -> void:

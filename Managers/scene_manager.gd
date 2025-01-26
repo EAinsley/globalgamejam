@@ -4,8 +4,8 @@ var scene_change_tween: Tween
 @onready var text_rect: ColorRect = $CanvasLayer/TextRect
 
 func change_scene(duration_fade_out: float, next_scene: PackedScene, duration_fade_in: float) -> void:
-	if scene_change_tween:
-		scene_change_tween.stop()
+	if scene_change_tween and scene_change_tween.is_running():
+		return
 	scene_change_tween = get_tree().create_tween()
 	scene_change_tween.tween_property(text_rect, "color", Color(0, 0, 0, 1), duration_fade_out)
 	scene_change_tween.finished.connect(_load_scene.bind(duration_fade_in, next_scene))
