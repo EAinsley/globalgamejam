@@ -32,7 +32,7 @@ size = Vector3(0.25, 2, 1.8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2rhlr"]
 size = Vector3(4.2, 2, 0.25)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_p5or2")

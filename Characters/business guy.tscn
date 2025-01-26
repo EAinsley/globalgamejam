@@ -1,7 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://bic1v1g7feveo"]
+[gd_scene load_steps=20 format=3 uid="uid://bic1v1g7feveo"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_kbedo"]
 [ext_resource type="Texture2D" uid="uid://b0fkhpl3frv58" path="res://pictures/character pictures/12.png" id="2_ccj66"]
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="2_p7ilo"]
+[ext_resource type="AudioStream" uid="uid://clkybvaw3drls" path="res://sounds/语气/good/exactly_good.wav" id="3_ccj66"]
+[ext_resource type="Resource" uid="uid://bkgcu45b1a4q3" path="res://resources/pets.tres" id="3_ktw2y"]
+[ext_resource type="AudioStream" uid="uid://bv0qtugakkf0q" path="res://sounds/语气/bad/ahh_bad.wav" id="4_dutyx"]
+[ext_resource type="Resource" uid="uid://dawr3ve3t7u1h" path="res://resources/technology.tres" id="4_y4k82"]
+[ext_resource type="Script" uid="uid://g83osdtyc5h7" path="res://resources/small_response.gd" id="5_l14n2"]
+[ext_resource type="Resource" uid="uid://28800iqursfm" path="res://resources/programming.tres" id="6_srmhb"]
+[ext_resource type="Resource" uid="uid://dlevr78dwgetk" path="res://resources/education.tres" id="7_idxc3"]
+[ext_resource type="AudioStream" uid="uid://mgbvnmc5i0fx" path="res://sounds/语气/neutral/咳嗽.wav" id="11_srmhb"]
+
+[sub_resource type="Resource" id="Resource_nqtye"]
+script = ExtResource("5_l14n2")
+small_talk = ExtResource("6_srmhb")
+response_type = 1
+metadata/_custom_type_script = ExtResource("5_l14n2")
+
+[sub_resource type="Resource" id="Resource_bvr4c"]
+script = ExtResource("5_l14n2")
+small_talk = ExtResource("7_idxc3")
+response_type = 0
+metadata/_custom_type_script = ExtResource("5_l14n2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj616"]
 resource_local_to_scene = true
@@ -27,6 +48,9 @@ viewport_path = NodePath("Dialogue/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccj66"]
 resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 albedo_texture = SubResource("ViewportTexture_kbedo")
 billboard_mode = 1
 
@@ -36,6 +60,8 @@ material = SubResource("StandardMaterial3D_ccj66")
 size = Vector2(2, 1)
 
 [node name="CharacterClick3D" instance=ExtResource("1_kbedo")]
+action_list = Array[ExtResource("2_p7ilo")]([ExtResource("3_ktw2y"), ExtResource("4_y4k82")])
+response_list = Array[ExtResource("5_l14n2")]([SubResource("Resource_nqtye"), SubResource("Resource_bvr4c")])
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_gcw3g")
@@ -45,3 +71,8 @@ shape = SubResource("SphereShape3D_jlg1v")
 
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_dutyx")
+
+[node name="SoundEffects" parent="." index="5"]
+response_sound_good = Array[AudioStream]([ExtResource("3_ccj66")])
+response_sound_bad = Array[AudioStream]([ExtResource("4_dutyx")])
+select_sound = ExtResource("11_srmhb")

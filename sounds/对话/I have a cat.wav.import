@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0jwsgxge36yk"
+path="res://.godot/imported/I have a cat.wav-83efc034ff54d4f8b98ce2114c2e0243.sample"
+
+[deps]
+
+source_file="res://sounds/对话/I have a cat.wav"
+dest_files=["res://.godot/imported/I have a cat.wav-83efc034ff54d4f8b98ce2114c2e0243.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

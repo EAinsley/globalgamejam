@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds0r7kvynxdew"
+path="res://.godot/imported/c0_short footsteps.mp3-da400e86c675ec1099ca4379562eb3ca.mp3str"
+
+[deps]
+
+source_file="res://sounds/c0_short footsteps.mp3"
+dest_files=["res://.godot/imported/c0_short footsteps.mp3-da400e86c675ec1099ca4379562eb3ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

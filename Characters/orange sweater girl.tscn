@@ -1,7 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm835rxixf1t"]
+[gd_scene load_steps=19 format=3 uid="uid://dm835rxixf1t"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_3tvgg"]
+[ext_resource type="Script" uid="uid://g83osdtyc5h7" path="res://resources/small_response.gd" id="2_jsy8a"]
 [ext_resource type="Texture2D" uid="uid://5lvq1dwerqq5" path="res://pictures/character pictures/7.png" id="2_rfedl"]
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="2_sbj51"]
+[ext_resource type="Resource" uid="uid://jrkkkkfvshn7" path="res://resources/knitting.tres" id="3_cpkal"]
+[ext_resource type="AudioStream" uid="uid://bt8ou8rquaqbk" path="res://sounds/语气/good/I love so much.wav" id="3_jus7a"]
+[ext_resource type="AudioStream" uid="uid://c8jv0nkgku7cp" path="res://sounds/语气/neutral/yeah_neutral.wav" id="3_rfedl"]
+[ext_resource type="Resource" uid="uid://dkl7d77w7am0e" path="res://resources/food.tres" id="3_vw2m7"]
+[ext_resource type="Resource" uid="uid://rb4s5pocg0dq" path="res://resources/game.tres" id="4_h5ccf"]
+[ext_resource type="Resource" uid="uid://28800iqursfm" path="res://resources/programming.tres" id="4_hfc47"]
+[ext_resource type="AudioStream" uid="uid://6yqfvy5ry73b" path="res://sounds/语气/bad/sorry.wav" id="4_nusca"]
+
+[sub_resource type="Resource" id="Resource_sbj51"]
+script = ExtResource("2_jsy8a")
+small_talk = ExtResource("3_vw2m7")
+response_type = 1
+metadata/_custom_type_script = ExtResource("2_jsy8a")
+
+[sub_resource type="Resource" id="Resource_cpkal"]
+script = ExtResource("2_jsy8a")
+small_talk = ExtResource("4_h5ccf")
+response_type = 0
+metadata/_custom_type_script = ExtResource("2_jsy8a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avy8a"]
 resource_local_to_scene = true
@@ -33,9 +54,16 @@ material = SubResource("StandardMaterial3D_rfedl")
 size = Vector2(2, 1)
 
 [node name="CharacterClick3D" instance=ExtResource("1_3tvgg")]
+action_list = Array[ExtResource("2_sbj51")]([ExtResource("3_cpkal"), ExtResource("4_hfc47")])
+response_list = Array[ExtResource("2_jsy8a")]([SubResource("Resource_sbj51"), SubResource("Resource_cpkal")])
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_rfulx")
 
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_w1xo3")
+
+[node name="SoundEffects" parent="." index="5"]
+response_sound_good = Array[AudioStream]([ExtResource("3_jus7a")])
+response_sound_bad = Array[AudioStream]([ExtResource("4_nusca")])
+select_sound = ExtResource("3_rfedl")
