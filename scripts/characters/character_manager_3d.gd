@@ -45,6 +45,9 @@ func _on_character_picked(new_character: CharacterClick3D) -> void:
 		character_picked = new_character
 	else:
 		new_character.talked_by(character_picked, action_picked)
+		character_picked.action_list.erase(action_picked)
+		action_picked = null
+		action_list_ui.replace_list(character_picked.action_list)
 	
 		
 	_set_item_list_ui()
