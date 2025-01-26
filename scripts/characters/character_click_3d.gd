@@ -28,6 +28,7 @@ var bubble_colliding_characters: Array[CharacterClick3D] = []
 		selected = value
 		if value:
 			appearance.mesh.material.emission_enabled = true
+			appearance.mesh.material.emission_energy_multiplier = 0.08
 		else:
 			appearance.mesh.material.emission_enabled = false
 			

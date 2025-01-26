@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://68lnmoq6g566"]
+[gd_scene load_steps=27 format=3 uid="uid://68lnmoq6g566"]
 
 [ext_resource type="ArrayMesh" uid="uid://c0ykiwxfvv4wb" path="res://graphics/3D/elevator_scene.obj" id="1_arhv6"]
 [ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="2_va0gh"]
+[ext_resource type="PackedScene" uid="uid://c6qxy4htjxvto" path="res://scenes/bus_stop.tscn" id="4_msfv8"]
 [ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/items/plant.png" id="4_twtuf"]
 [ext_resource type="PackedScene" path="res://scenes/elevator_door.tscn" id="5_c4ta5"]
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="6_kjhgt"]
@@ -102,6 +103,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, 0)
 
 [node name="CharacterManager3D" parent="." instance=ExtResource("6_kjhgt")]
+next_level = ExtResource("4_msfv8")
 
 [node name="GoalAreaShape" parent="CharacterManager3D/GoalArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124512, 1.02191, -1.71673)
@@ -137,5 +139,8 @@ shape = SubResource("ConcavePolygonShape3D_jbja3")
 [node name="backgroundmusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_o13ub")
 autoplay = true
+
+[connection signal="won" from="CharacterManager3D" to="Node3D" method="_on_character_manager_3d_won"]
+[connection signal="won" from="CharacterManager3D" to="Node3D2" method="_on_character_manager_3d_won"]
 
 [editable path="CharacterManager3D"]
