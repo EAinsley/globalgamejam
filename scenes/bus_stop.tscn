@@ -52,7 +52,7 @@ transform = Transform3D(0.947768, 0.264118, -0.178821, 0, 0.560639, 0.82806, 0.3
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.913935, 0.40586, 0, -0.40586, 0.913935, 0.588623, 5.36327, 8.11955)
+transform = Transform3D(1, 0, 0, 0, 0.826717, 0.562618, 0, -0.562618, 0.826717, 0.588623, 4.5005, 4.15536)
 
 [node name="CharacterManager3D" parent="." instance=ExtResource("2_mt65r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29913, 1.0302, 0)
