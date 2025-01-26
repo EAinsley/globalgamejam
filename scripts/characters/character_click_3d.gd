@@ -19,7 +19,7 @@ var bubble_colliding_characters: Array[CharacterClick3D] = []
 @onready var appearance: MeshInstance3D = $Appearance
 @onready var sentence: Label = %Sentence
 @onready var dialogue: Dialogue = $Dialogue
-@onready var bubble: Area3D = $Bubble
+@onready var bubble: Bubble = $Bubble
 
 @onready var selected = false :
 	set(value) :
@@ -104,8 +104,12 @@ func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 			match response.response_type:
 				SmallResponse.RESPONSE_TYPE.GOOD:
 					dialogue.say(response.small_talk.good_responses.pick_random())
+					bubble.change_bubble_size(0.5, 0.5)
+					character.bubble.change_bubble_size(0.5, 0.5)
 				SmallResponse.RESPONSE_TYPE.BAD:
 					dialogue.say(response.small_talk.bad_responses.pick_random())
+					bubble.change_bubble_size(1.5, 0.5)
+					character.bubble.change_bubble_size(1.5, 0.5)
 				SmallResponse.RESPONSE_TYPE.MEDIUM:
 					dialogue.say(response.small_talk.medium_reponses.pick_random())
 			return true
