@@ -43,23 +43,27 @@ size = Vector2(1, 1.4)
 [sub_resource type="SphereShape3D" id="SphereShape3D_jlg1v"]
 radius = 1.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kbedo"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_srmhb"]
 viewport_path = NodePath("Dialogue/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccj66"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idxc3"]
 resource_local_to_scene = true
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = SubResource("ViewportTexture_kbedo")
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_srmhb")
 billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_dutyx"]
+[sub_resource type="QuadMesh" id="QuadMesh_nqtye"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ccj66")
-size = Vector2(2, 1)
+material = SubResource("StandardMaterial3D_idxc3")
+size = Vector2(1, 0.5)
+center_offset = Vector3(-0.3, -0.15, 0)
 
-[node name="CharacterClick3D" instance=ExtResource("1_kbedo")]
+[node name="BusinessGuy" instance=ExtResource("1_kbedo")]
 action_list = Array[ExtResource("2_p7ilo")]([ExtResource("3_ktw2y"), ExtResource("4_y4k82")])
 response_list = Array[ExtResource("5_l14n2")]([SubResource("Resource_nqtye"), SubResource("Resource_bvr4c")])
 
@@ -70,7 +74,7 @@ mesh = SubResource("QuadMesh_gcw3g")
 shape = SubResource("SphereShape3D_jlg1v")
 
 [node name="Dialogue" parent="." index="3"]
-mesh = SubResource("QuadMesh_dutyx")
+mesh = SubResource("QuadMesh_nqtye")
 
 [node name="SoundEffects" parent="." index="5"]
 response_sound_good = Array[AudioStream]([ExtResource("3_ccj66")])

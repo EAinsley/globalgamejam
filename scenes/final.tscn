@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c68rjsur2xepe"]
+
+[ext_resource type="Texture2D" uid="uid://dynm727tuqm8t" path="res://pictures/background/Background_Menu.png" id="1_4pp6u"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundMenu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4pp6u")
+expand_mode = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8jfl4rv57d56"]
+[gd_scene load_steps=20 format=3 uid="uid://c8jfl4rv57d56"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_2kai5"]
 [ext_resource type="Texture2D" uid="uid://0oa4xiw14e4a" path="res://pictures/character pictures/4.png" id="2_ddy2a"]
@@ -40,28 +40,42 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_86r3n")
 size = Vector2(1, 1.7)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2kai5"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_vgaxp"]
+resource_local_to_scene = true
+radius = 1.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vgaxp"]
 viewport_path = NodePath("Dialogue/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddy2a"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1i3u3"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_2kai5")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_vgaxp")
 billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_qty8s"]
+[sub_resource type="QuadMesh" id="QuadMesh_8mfx5"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_ddy2a")
-size = Vector2(2, 1)
+material = SubResource("StandardMaterial3D_1i3u3")
+size = Vector2(1, 0.5)
+center_offset = Vector3(-0.3, -0.15, 0)
 
-[node name="CharacterClick3D" instance=ExtResource("1_2kai5")]
+[node name="PnnkGuy" instance=ExtResource("1_2kai5")]
 action_list = Array[ExtResource("2_vgaxp")]([ExtResource("3_1i3u3"), ExtResource("4_8mfx5")])
 response_list = Array[ExtResource("5_01mss")]([SubResource("Resource_mqbdg"), SubResource("Resource_5161i")])
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_snq1s")
 
+[node name="PushAreaCollisionShape" parent="PushArea" index="0"]
+shape = SubResource("SphereShape3D_vgaxp")
+
 [node name="Dialogue" parent="." index="3"]
-mesh = SubResource("QuadMesh_qty8s")
+mesh = SubResource("QuadMesh_8mfx5")
 
 [node name="SoundEffects" parent="." index="5"]
 response_sound_good = Array[AudioStream]([ExtResource("3_qty8s")])
