@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6qxy4htjxvto"]
+[gd_scene load_steps=8 format=3 uid="uid://c6qxy4htjxvto"]
 
 [ext_resource type="ArrayMesh" uid="uid://ck3hpsm4gwrk1" path="res://graphics/3D/scene_around_busstop.obj" id="1_jt85a"]
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="2_mt65r"]
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="2_nbpj8"]
+[ext_resource type="AudioStream" uid="uid://bsy7oofi8xos5" path="res://sounds/background music/sanjinooyatsu.mp3" id="4_u06jw"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_nbpj8"]
 
@@ -42,3 +43,7 @@ surface_material_override/1 = SubResource("ORMMaterial3D_mt65r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0378403, 0, 0.29987)
 shape = SubResource("ConcavePolygonShape3D_mt65r")
+
+[node name="background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_u06jw")
+autoplay = true

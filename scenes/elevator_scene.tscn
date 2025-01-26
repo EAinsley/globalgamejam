@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://g83osdtyc5h7" path="res://resources/small_response.gd" id="10_o13ub"]
 [ext_resource type="PackedScene" uid="uid://sw2a708woqq2" path="res://Characters/earphone girl 2.tscn" id="11_msfv8"]
 [ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="12_jbja3"]
+[ext_resource type="AudioStream" uid="uid://d0xt5m6pauh0x" path="res://sounds/background music/pugtoosanpo.mp3" id="14_o13ub"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_twtuf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -134,3 +135,6 @@ shape = SubResource("ConcavePolygonShape3D_jbja3")
 [node name="InGameMenu" parent="." instance=ExtResource("12_jbja3")]
 
 [editable path="CharacterManager3D"]
+[node name="backgroundmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_o13ub")
+autoplay = true
