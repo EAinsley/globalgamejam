@@ -117,7 +117,7 @@ func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 					character.bubble.change_bubble_size(1.5, 0.5)
 				SmallResponse.RESPONSE_TYPE.MEDIUM:
 					dialogue.say(response.small_talk.medium_reponses.pick_random())
-			sound_effects.play_response(response.RESPONSE_TYPE)
+			sound_effects.play_response(response.response_type)
 			return true
 	dialogue.say(default_text)
 	# sound here?
