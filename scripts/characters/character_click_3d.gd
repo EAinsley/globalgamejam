@@ -9,6 +9,7 @@ signal picked(node: CharacterClick3D)
 @export var action_list: Array[SmallTalk]
 @export var response_list: Array[SmallResponse]
 @export var default_text: String = "Who are you?"
+@onready var sound_effects: SoundEffects = $SoundEffects
 
 var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
@@ -74,6 +75,8 @@ func _process(delta: float) -> void:
 			velocity_xy.x += delta_distance.x
 			velocity_xy.y += delta_distance.z
 		velocity_xy = velocity_xy.normalized() * avoid_speed 
+	if velocity_xy != Vector2.ZERO:
+		sound_effects.play_foot()
 	
 func _physics_process(delta: float) -> void:
 	velocity.x = velocity_xy.x * delta
@@ -90,11 +93,14 @@ func pick() -> void:
 	selected = true
 	bubble_colliding_characters.clear()
 	bubble.set_collision_mask_value(3, true)
+	sound_effects.play_select()
+	
 	
 func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 	print("interact")
 	if character.position.distance_squared_to(position) > interaction_distance_square:
 		character.dialogue.say("Too far")
+		# sound here?
 		return false
 	for response in response_list:
 		print("trying ", character.response_list.size(), " ", response.small_talk.name)
@@ -111,8 +117,10 @@ func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 					character.bubble.change_bubble_size(1.5, 0.5)
 				SmallResponse.RESPONSE_TYPE.MEDIUM:
 					dialogue.say(response.small_talk.medium_reponses.pick_random())
+			sound_effects.play_response(response.RESPONSE_TYPE)
 			return true
 	dialogue.say(default_text)
+	# sound here?
 	return true
 
 
