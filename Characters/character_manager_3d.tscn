@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqoi6t47dm7xn" path="res://scripts/characters/character_manager_3d.gd" id="1_p16ir"]
 
-[node name="CharacterManager3D" type="Node3D"]
+[node name="CharacterManager3D" type="Node3D" groups=["CharacterManager"]]
 script = ExtResource("1_p16ir")
 
 [node name="GoalArea" type="Area3D" parent="."]

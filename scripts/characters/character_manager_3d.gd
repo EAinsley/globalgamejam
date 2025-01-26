@@ -1,6 +1,10 @@
 extends Node3D
 class_name CharacterManager3D
 
+@export var next_level: PackedScene
+
+signal won(next_level: PackedScene)
+
 var character_picked : CharacterClick3D
 var action_picked: SmallTalk
 var charaters_number := 0
@@ -65,6 +69,7 @@ func _on_goal_area_body_entered(body: Node3D) -> void:
 		print("inside number add")
 		if now_inside_number >= charaters_number:
 			print("You win")
+			won.emit()
 
 
 func _on_goal_area_body_exited(body: Node3D) -> void:
