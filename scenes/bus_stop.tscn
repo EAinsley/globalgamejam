@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c6qxy4htjxvto"]
+[gd_scene load_steps=46 format=3 uid="uid://c6qxy4htjxvto"]
 
 [ext_resource type="Script" uid="uid://cxqycjhoof6vh" path="res://scenes/bus_stop.gd" id="1_2rhlr"]
 [ext_resource type="ArrayMesh" uid="uid://ck3hpsm4gwrk1" path="res://graphics/3D/scene_around_busstop.obj" id="1_jt85a"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://djsiuoggsfd8" path="res://pictures/items/streetlight.png" id="22_081r7"]
 [ext_resource type="Texture2D" uid="uid://cbbybot3ymqs8" path="res://pictures/items/door.png" id="23_k42q1"]
 [ext_resource type="Texture2D" uid="uid://bxswavi21j1oi" path="res://pictures/items/window.png" id="24_t6bjv"]
+[ext_resource type="Texture2D" uid="uid://bqk5c8nt44va3" path="res://pictures/items/grass.png" id="25_ac4ss"]
+[ext_resource type="Texture2D" uid="uid://botbu5ljxn88c" path="res://pictures/items/flower.png" id="26_6bwav"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt65r"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -93,6 +95,21 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("24_t6bjv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro06y"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("25_ac4ss")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bprmm"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfj5c"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("26_6bwav")
 
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_2rhlr")
@@ -245,6 +262,26 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.719, 2.085, -6.649)
 mesh = SubResource("QuadMesh_ac4ss")
 surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78567, 0.480472, -1.33845)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_ro06y")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75096, 0.480471, -1.14393)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_ro06y")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22048, 0.33349, -1.72552)
+mesh = SubResource("QuadMesh_bprmm")
+surface_material_override/0 = SubResource("StandardMaterial3D_dfj5c")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85305, 0.33349, -2.45711)
+mesh = SubResource("QuadMesh_bprmm")
+surface_material_override/0 = SubResource("StandardMaterial3D_dfj5c")
 
 [connection signal="won" from="CharacterManager3D" to="." method="_on_character_manager_3d_won"]
 
