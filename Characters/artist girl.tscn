@@ -24,13 +24,16 @@ viewport_path = NodePath("Dialogue/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow26y"]
 resource_local_to_scene = true
+no_depth_test = true
 albedo_texture = SubResource("ViewportTexture_ba6ao")
 billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_cqt7n"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ow26y")
-size = Vector2(2, 1)
+size = Vector2(1, 0.5)
+center_offset = Vector3(-0.3, -0.15, 0)
 
 [node name="CharacterClick3D" instance=ExtResource("1_wajq4")]
 
@@ -43,5 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0170055, -0.0405653, -0.01
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_cqt7n")
 
-[node name="Node3D" parent="." index="4"]
-visible = false
+[node name="Bubble" parent="." index="4"]
+collision_mask = 0
+
+[connection signal="area_exited" from="Bubble" to="." method="_on_bubble_area_exited"]

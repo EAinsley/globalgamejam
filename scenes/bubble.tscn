@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7vvbdd3qv8v2"]
+[gd_scene load_steps=5 format=3 uid="uid://c7vvbdd3qv8v2"]
 
 [ext_resource type="ArrayMesh" uid="uid://bojbv0njk6xiw" path="res://graphics/3D/bubble.obj" id="1_2vdav"]
+[ext_resource type="Script" uid="uid://bksidkkuqblg8" path="res://scripts/characters/bubble.gd" id="1_pm753"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm753"]
 transparency = 1
@@ -9,8 +10,19 @@ roughness = 0.0
 refraction_enabled = true
 refraction_scale = 0.02
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_2vdav"]
+resource_local_to_scene = true
+radius = 0.828774
+
+[node name="Bubble" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+input_ray_pickable = false
+script = ExtResource("1_pm753")
 
 [node name="Bubble" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_2vdav")
 surface_material_override/0 = SubResource("StandardMaterial3D_pm753")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2vdav")
