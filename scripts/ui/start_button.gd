@@ -4,5 +4,5 @@ extends Button
 
 func _on_pressed() -> void:
 	print("change scene to ", first_level.resource_name)
-	get_tree().change_scene_to_packed(first_level)
+	SceneManager.change_scene(1., first_level, 5.)
 	

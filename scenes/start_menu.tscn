@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dynm727tuqm8t" path="res://pictures/background/Background_Menu.png" id="1_h61rw"]
 [ext_resource type="Script" uid="uid://0ljvin3pvlmd" path="res://scripts/ui/start_button.gd" id="1_ouf4f"]
-[ext_resource type="PackedScene" uid="uid://clttg52282go4" path="res://scenes/level_3d.tscn" id="2_m7x51"]
+[ext_resource type="PackedScene" uid="uid://68lnmoq6g566" path="res://scenes/elevator_scene.tscn" id="3_h61rw"]
 [ext_resource type="Script" uid="uid://b1jhsx5seyt21" path="res://scripts/ui/exit_button.gd" id="3_m7x51"]
 
 [sub_resource type="Theme" id="Theme_m7x51"]
@@ -52,7 +52,7 @@ alignment = 1
 layout_mode = 2
 text = "Start"
 script = ExtResource("1_ouf4f")
-first_level = ExtResource("2_m7x51")
+first_level = ExtResource("3_h61rw")
 
 [node name="ExitButton" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
