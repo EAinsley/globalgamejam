@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://28800iqursfm"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_ctqcq"]
+
+[resource]
+script = ExtResource("1_ctqcq")
+name = &"programming"
+good_responses = Array[String]([" I really enjoy programming; it’s so rewarding to solve problems and create something from scratch.", "Programming allows me to be incredibly creative and think critically at the same time.", "I love coding because it challenges me and opens up endless opportunities for learning and innovation."])
+bad_responses = Array[String](["I don’t enjoy programming at all; it feels like a lot of unnecessary complexity.", "Programming is frustrating for me; I often get stuck and feel overwhelmed.", "I don’t like coding; it seems boring and doesn’t interest me much."])
+medium_reponses = Array[String](["Programming is okay; I do it when necessary, but I’m not deeply passionate about it.", "I can program if I need to, but it’s not something I do in my free time.", "Programming is useful, but it’s not the most exciting thing for me to work on."])
+metadata/_custom_type_script = ExtResource("1_ctqcq")

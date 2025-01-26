@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://rb4s5pocg0dq"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_60bu5"]
+
+[resource]
+script = ExtResource("1_60bu5")
+name = &"game"
+good_responses = Array[String](["I love playing games, especially video games; they are a great way to relax and have fun.", "Board games with friends are always a blast! It’s such a fun way to bond and compete.", "I enjoy challenging myself with strategy games—they really make me think and improve my problem-solving skills."])
+bad_responses = Array[String](["I don’t really enjoy games; they feel like a waste of time to me.", "I don’t see the appeal of gaming; I’d rather spend my time doing something else.", "I’m not into games at all—most of them just seem boring to me."])
+medium_reponses = Array[String](["I play games from time to time, but I’m not really obsessed with them.", "I don’t mind playing games, but they aren’t something I do every day.", "I think games can be fun, but I don’t spend a lot of time on them."])
+metadata/_custom_type_script = ExtResource("1_60bu5")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://sw2a708woqq2"]
+[gd_scene load_steps=8 format=3 uid="uid://sw2a708woqq2"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_cfr1w"]
 [ext_resource type="Texture2D" uid="uid://bke1j1hel8i1o" path="res://pictures/9.png" id="2_rpoow"]
@@ -19,7 +19,23 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ldfmt")
 size = Vector2(1, 1.4)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_cfr1w"]
+viewport_path = NodePath("Dialogue/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpoow"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_cfr1w")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_2wppj"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_rpoow")
+size = Vector2(2, 1)
+
 [node name="CharacterClick3D" instance=ExtResource("1_cfr1w")]
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_fn4ic")
+
+[node name="Dialogue" parent="." index="3"]
+mesh = SubResource("QuadMesh_2wppj")

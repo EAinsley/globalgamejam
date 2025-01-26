@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://bmhovfcsg2gub"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_0ybvb"]
+
+[resource]
+script = ExtResource("1_0ybvb")
+name = &"politics"
+good_responses = Array[String](["I find politics fascinating because it plays such an important role in shaping society and our future.", "I’m really passionate about politics; it’s crucial to stay informed and engaged in what’s happening around the world.", "Politics is interesting because it influences everything from laws to social issues, and I love discussing different viewpoints."])
+bad_responses = Array[String](["I don’t really enjoy politics; it’s often frustrating and feels like nothing ever changes.", "Politics can be too divisive for me; it’s hard to have productive conversations with so many differing opinions.", "I’m not interested in politics at all; it seems like a lot of drama and doesn’t affect my daily life."])
+medium_reponses = Array[String](["I think politics is important, but I don’t get too involved in it.", "I follow politics to some extent, but I try to avoid getting too caught up in debates.", "Politics is something I pay attention to occasionally, but I don’t feel the need to discuss it all the time."])
+metadata/_custom_type_script = ExtResource("1_0ybvb")

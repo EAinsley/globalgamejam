@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://jrkkkkfvshn7"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_n7yft"]
+
+[resource]
+script = ExtResource("1_n7yft")
+name = &"knitting"
+good_responses = Array[String](["I really enjoy knitting! It’s a relaxing and creative way to make something beautiful with my hands.", "Knitting is such a rewarding hobby; I love seeing the progress and creating cozy items for myself or as gifts.", "I find knitting so calming; it’s a great way to unwind after a busy day."])
+bad_responses = Array[String](["I’m not really into knitting; it feels too slow and repetitive for me.", "I don’t find knitting enjoyable; it’s just not my thing.", "I’ve tried knitting, but I just don’t have the patience for it."])
+medium_reponses = Array[String](["Knitting is interesting, but I don’t do it very often. I’m still learning the basics.", "I like knitting from time to time, but it’s not something I’m extremely passionate about.", "Knitting is fine, but I prefer other hobbies that are more dynamic or interactive."])
+metadata/_custom_type_script = ExtResource("1_n7yft")

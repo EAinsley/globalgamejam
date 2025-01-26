@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://cdquh81gdm7lc"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_ldj5l"]
+
+[resource]
+script = ExtResource("1_ldj5l")
+name = &"history"
+good_responses = Array[String](["I absolutely love history! It’s fascinating to learn about past events and how they shaped the world today.", "History is so rich with lessons and stories that help us understand the present better.", "I enjoy studying history because it gives me a deeper appreciation for different cultures and civilizations."])
+bad_responses = Array[String](["I don’t find history very engaging; it seems like just memorizing dates and events.", "History can be pretty boring for me; I don’t see the point of learning about the past all the time.", "I’m not a fan of history; it feels irrelevant to the modern world."])
+medium_reponses = Array[String](["History is interesting sometimes, but I’m not particularly passionate about it.", "I think history has its importance, but I don’t focus on it much in my daily life.", "History is okay, but I’d rather focus on other subjects that feel more relevant to me."])
+metadata/_custom_type_script = ExtResource("1_ldj5l")

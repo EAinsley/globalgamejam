@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SmallTalk" load_steps=2 format=3 uid="uid://bkgcu45b1a4q3"]
+
+[ext_resource type="Script" uid="uid://ciouolf0du6i7" path="res://resources/small_talk.gd" id="1_to464"]
+
+[resource]
+script = ExtResource("1_to464")
+name = &"pets"
+good_responses = Array[String](["I absolutely love pets! They bring so much happiness and comfort into my life.", "Having a pet is one of the best decisions I’ve ever made; they’re like family.", "I enjoy spending time with my pets; they always make me feel loved and appreciated."])
+bad_responses = Array[String](["I’m not a fan of pets; I prefer not to have animals around the house.", "Pets are too much work for me; I don’t think I’d enjoy taking care of one.", "I don’t like pets, they make too much noise and create a lot of mess."])
+medium_reponses = Array[String](["Pets are nice, but I don’t have one myself at the moment.", "I don’t mind being around pets, but I’m not sure if I’d want to own one.", "I think pets are cute, but I’m not really looking to have one anytime soon."])
+metadata/_custom_type_script = ExtResource("1_to464")
