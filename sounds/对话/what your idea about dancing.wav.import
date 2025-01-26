@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfygl4ha4wpr7"
+path="res://.godot/imported/what your idea about dancing.wav-e380cc30ff9f1e56f3b2add1094453b1.sample"
+
+[deps]
+
+source_file="res://sounds/对话/what your idea about dancing.wav"
+dest_files=["res://.godot/imported/what your idea about dancing.wav-e380cc30ff9f1e56f3b2add1094453b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
