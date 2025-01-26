@@ -1,7 +1,7 @@
 extends MeshInstance3D
 class_name Dialogue
 
-@onready var sentence: Label = %Sentence
+@onready var sentence: RichTextLabel = %Sentence
 @onready var timer: Timer = $Timer
 
 func say(words: String) -> void:
