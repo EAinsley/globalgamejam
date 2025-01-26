@@ -1,2 +1,42 @@
 # Blender 4.3.1 MTL File: 'busstop_2.blend'
 # www.blender.org
+
+newmtl Sidewalkedge
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /Users/davidsimonsson/Documents/GitHub/globalgamejam_sourcefiles/sidewalk_edge_diff.png
+
+newmtl Street
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /Users/davidsimonsson/Documents/GitHub/globalgamejam_sourcefiles/concrete_diff.png
+
+newmtl TileFloor
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /Users/davidsimonsson/Documents/GitHub/globalgamejam_sourcefiles/tilefloor_diff.png
+
+newmtl Wall
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd /Users/davidsimonsson/Documents/GitHub/globalgamejam_sourcefiles/concrete_diff.png

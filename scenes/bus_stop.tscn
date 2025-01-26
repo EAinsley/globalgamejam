@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c6qxy4htjxvto"]
+[gd_scene load_steps=41 format=3 uid="uid://c6qxy4htjxvto"]
 
 [ext_resource type="Script" uid="uid://cxqycjhoof6vh" path="res://scenes/bus_stop.gd" id="1_2rhlr"]
 [ext_resource type="ArrayMesh" uid="uid://ck3hpsm4gwrk1" path="res://graphics/3D/scene_around_busstop.obj" id="1_jt85a"]
@@ -12,9 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://c8jfl4rv57d56" path="res://Characters/punk guy.tscn" id="7_7onf3"]
 [ext_resource type="ArrayMesh" uid="uid://c3sk1ixpqk4qb" path="res://graphics/3D/busstop_wall.obj" id="8_2rhlr"]
 [ext_resource type="ArrayMesh" uid="uid://c0iodv4jk07ec" path="res://graphics/3D/busstop_sidewalk.obj" id="9_0f0w2"]
+[ext_resource type="Texture2D" uid="uid://dy6d2chjf0xs8" path="res://graphics/2D/tilefloor_diff.png" id="9_ixjyp"]
+[ext_resource type="Texture2D" uid="uid://tgga5dr8qgyd" path="res://graphics/2D/tilefloor_normal.png" id="10_081r7"]
+[ext_resource type="Texture2D" uid="uid://peqjskdk4p43" path="res://graphics/2D/concrete_diff.png" id="11_n4kbq"]
 [ext_resource type="AudioStream" uid="uid://dp32dxonsm2sv" path="res://sounds/c0_bus station2.wav" id="12_cos2u"]
+[ext_resource type="Texture2D" uid="uid://b5rblyh5couu5" path="res://graphics/2D/concrete_normal.png" id="12_k42q1"]
 [ext_resource type="PackedScene" uid="uid://btvuk3kqs6vsc" path="res://scenes/anction_list_ui.tscn" id="13_1dlwr"]
+[ext_resource type="Texture2D" uid="uid://deyb2ejinad35" path="res://graphics/2D/sidewalk_edge_diff.png" id="13_t6bjv"]
+[ext_resource type="Texture2D" uid="uid://drjoxh2tsebg7" path="res://graphics/2D/sidewalk_edge_normal.png" id="14_ac4ss"]
 [ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="14_u7wym"]
+[ext_resource type="Texture2D" uid="uid://djsiuoggsfd8" path="res://pictures/items/streetlight.png" id="22_081r7"]
+[ext_resource type="Texture2D" uid="uid://cbbybot3ymqs8" path="res://pictures/items/door.png" id="23_k42q1"]
+[ext_resource type="Texture2D" uid="uid://bxswavi21j1oi" path="res://pictures/items/window.png" id="24_t6bjv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt65r"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -32,6 +41,26 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7faqw"]
 size = Vector3(3.70749, 1.6825, 1.91394)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bwav"]
+albedo_texture = ExtResource("9_ixjyp")
+normal_enabled = true
+normal_texture = ExtResource("10_081r7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_no88q"]
+albedo_texture = ExtResource("11_n4kbq")
+normal_enabled = true
+normal_texture = ExtResource("12_k42q1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7p288"]
+albedo_texture = ExtResource("11_n4kbq")
+normal_enabled = true
+normal_texture = ExtResource("12_k42q1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7jcl"]
+albedo_texture = ExtResource("13_t6bjv")
+normal_enabled = true
+normal_texture = ExtResource("14_ac4ss")
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0f0w2"]
 data = PackedVector3Array(11, -0.0001, 0.5, -13, -0.0001, 0.5, 11, -0.0001, -7, 11, -0.0001, -7, -13, -0.0001, 0.5, -13, -0.0001, -7, 11, -0.0001, -7, -13, -0.0001, -7, 11, 4, -7, 11, 4, -7, -13, -0.0001, -7, -13, 4, -7, -13, -0.0001, 0.5, 11, -0.0001, 0.5, -13, -0.125, 0.5, -13, -0.125, 0.5, 11, -0.0001, 0.5, 11, -0.125, 0.5, -13, -0.125, 0.5, 11, -0.125, 0.5, -13, -0.125, 5.5, -13, -0.125, 5.5, 11, -0.125, 0.5, 11, -0.125, 5.5)
 
@@ -40,6 +69,30 @@ size = Vector3(0.25, 2, 1.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2rhlr"]
 size = Vector3(4.2, 2, 0.25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n4kbq"]
+size = Vector2(2, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k42q1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("22_081r7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ac4ss"]
+size = Vector2(2, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or15i"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("23_k42q1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt3r3"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("24_t6bjv")
 
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_2rhlr")
@@ -52,7 +105,8 @@ transform = Transform3D(0.947768, 0.264118, -0.178821, 0, 0.560639, 0.82806, 0.3
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.826717, 0.562618, 0, -0.562618, 0.826717, 0.588623, 4.5005, 4.15536)
+transform = Transform3D(1, 0, 0, 0, 0.860431, 0.509568, 0, -0.509568, 0.860431, -0.549854, 5.66712, 7.01794)
+fov = 45.0
 
 [node name="CharacterManager3D" parent="." instance=ExtResource("2_mt65r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29913, 1.0302, 0)
@@ -80,6 +134,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31993, 0, 1.80147)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0378403, 0, 0.29987)
 mesh = ExtResource("1_jt85a")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6bwav")
+surface_material_override/1 = SubResource("StandardMaterial3D_no88q")
+surface_material_override/2 = SubResource("StandardMaterial3D_7p288")
+surface_material_override/3 = SubResource("StandardMaterial3D_t7jcl")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0378403, 0, 0.29987)
@@ -150,6 +208,43 @@ autoplay = true
 [node name="ActionList" parent="." instance=ExtResource("13_1dlwr")]
 
 [node name="InGameMenu" parent="." instance=ExtResource("14_u7wym")]
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26049, 1.02404, -1.47727)
+mesh = SubResource("QuadMesh_n4kbq")
+surface_material_override/0 = SubResource("StandardMaterial3D_k42q1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.15245, 1.66217, -6.64901)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_or15i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86453, 2.08538, -6.64901)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24618, 2.08538, -6.64901)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.43899, 2.08538, -6.64901)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.83637, 2.08538, -6.64901)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71915, 2.33667, -6.7345)
+mesh = SubResource("QuadMesh_ac4ss")
+surface_material_override/0 = SubResource("StandardMaterial3D_jt3r3")
 
 [connection signal="won" from="CharacterManager3D" to="." method="_on_character_manager_3d_won"]
 
