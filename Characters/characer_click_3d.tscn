@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvdoki62xebsy"]
+[gd_scene load_steps=14 format=3 uid="uid://dvdoki62xebsy"]
 
 [ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
 [ext_resource type="Script" uid="uid://dy5kpa65lpalo" path="res://scripts/characters/dialogue.gd" id="3_jlg1v"]
 [ext_resource type="PackedScene" uid="uid://c7vvbdd3qv8v2" path="res://scenes/bubble.tscn" id="4_omau8"]
-[ext_resource type="Script" uid="uid://cfr16b55en10d" path="res://Characters/sound_effects.gd" id="5_ne0q4"]
+[ext_resource type="Script" path="res://Characters/sound_effects.gd" id="5_ne0q4"]
+[ext_resource type="AudioStream" uid="uid://ds0r7kvynxdew" path="res://sounds/c0_short footsteps.mp3" id="6_lux0q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
 resource_local_to_scene = true
@@ -23,6 +24,7 @@ material = SubResource("StandardMaterial3D_5cfqy")
 size = Vector2(1, 1.4)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_omau8"]
+radius = 0.353014
 height = 1.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5cfqy"]
@@ -113,6 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402009, 0.958694, 0.02898
 
 [node name="SoundEffects" type="Node" parent="."]
 script = ExtResource("5_ne0q4")
+foot_sound = Array[AudioStream]([ExtResource("6_lux0q")])
 
 [node name="FootSoundPlayer" type="AudioStreamPlayer" parent="SoundEffects"]
 
