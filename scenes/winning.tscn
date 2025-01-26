@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://gqsl1o10s5uj"]
+
+[ext_resource type="Texture2D" uid="uid://dpympb8prsi6h" path="res://pictures/ui/You_WIN.png" id="1_83j5x"]
+[ext_resource type="Script" uid="uid://c67cj713broq2" path="res://scenes/winning.gd" id="1_ix8h7"]
+[ext_resource type="Texture2D" uid="uid://dynm727tuqm8t" path="res://pictures/background/Background_Menu.png" id="1_mg68r"]
+[ext_resource type="Texture2D" uid="uid://cee7idhi8kegq" path="res://pictures/ui/TryAgain_Button.png" id="2_mg68r"]
+[ext_resource type="PackedScene" uid="uid://bc3m73bxqxfp5" path="res://scenes/start_menu.tscn" id="2_oadui"]
+[ext_resource type="Texture2D" uid="uid://cpug1c3m5r5lh" path="res://pictures/ui/TryAgain_Button_Clicked.png" id="3_oeypd"]
+
+[node name="Winning" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ix8h7")
+next_level = ExtResource("2_oadui")
+
+[node name="BackgroundMenu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mg68r")
+expand_mode = 1
+
+[node name="TryAgainButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.5
+offset_top = -31.0
+offset_right = 144.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_mg68r")
+texture_pressed = ExtResource("3_oeypd")
+
+[node name="YouWin" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 120.0
+offset_right = 777.0
+offset_bottom = 230.0
+texture_normal = ExtResource("1_83j5x")
+
+[connection signal="pressed" from="TryAgainButton" to="." method="_on_try_again_button_pressed"]

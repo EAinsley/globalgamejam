@@ -59,7 +59,7 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ccj66")
 size = Vector2(2, 1)
 
-[node name="CharacterClick3D" instance=ExtResource("1_kbedo")]
+[node name="BusinessGuy" instance=ExtResource("1_kbedo")]
 action_list = Array[ExtResource("2_p7ilo")]([ExtResource("3_ktw2y"), ExtResource("4_y4k82")])
 response_list = Array[ExtResource("5_l14n2")]([SubResource("Resource_nqtye"), SubResource("Resource_bvr4c")])
 

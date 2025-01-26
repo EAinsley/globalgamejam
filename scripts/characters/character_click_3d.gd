@@ -114,6 +114,7 @@ func talked_by(character: CharacterClick3D,  action: SmallTalk) -> bool:
 					dialogue.say(response.small_talk.good_responses.pick_random())
 					bubble.change_bubble_size(0.5, 0.5)
 					character.bubble.change_bubble_size(0.5, 0.5)
+					push_area_collision_shape.shape.radius = 0.6
 				SmallResponse.RESPONSE_TYPE.BAD:
 					dialogue.say(response.small_talk.bad_responses.pick_random())
 					bubble.change_bubble_size(1.5, 0.5)
