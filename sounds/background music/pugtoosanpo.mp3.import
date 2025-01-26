@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0xt5m6pauh0x"
+path="res://.godot/imported/pugtoosanpo.mp3-12efe9efbea4ea862d4fe776521de19f.mp3str"
+
+[deps]
+
+source_file="res://sounds/background music/pugtoosanpo.mp3"
+dest_files=["res://.godot/imported/pugtoosanpo.mp3-12efe9efbea4ea862d4fe776521de19f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
