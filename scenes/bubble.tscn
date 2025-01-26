@@ -8,7 +8,7 @@ transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 roughness = 0.0
 refraction_enabled = true
-refraction_scale = 0.02
+refraction_scale = 0.01
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2vdav"]
 resource_local_to_scene = true

@@ -39,7 +39,7 @@ material = SubResource("StandardMaterial3D_ow26y")
 size = Vector2(1, 0.5)
 center_offset = Vector3(-0.3, -0.15, 0)
 
-[node name="CharacterClick3D" instance=ExtResource("1_wajq4")]
+[node name="CharacterClick3D2" instance=ExtResource("1_wajq4")]
 
 [node name="Appearance" parent="." index="0"]
 mesh = SubResource("QuadMesh_mkehk")
