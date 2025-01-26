@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://68lnmoq6g566"]
+[gd_scene load_steps=26 format=3 uid="uid://68lnmoq6g566"]
 
 [ext_resource type="ArrayMesh" uid="uid://c0ykiwxfvv4wb" path="res://graphics/3D/elevator_scene.obj" id="1_arhv6"]
 [ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="2_va0gh"]
@@ -134,7 +134,8 @@ shape = SubResource("ConcavePolygonShape3D_jbja3")
 
 [node name="InGameMenu" parent="." instance=ExtResource("12_jbja3")]
 
-[editable path="CharacterManager3D"]
 [node name="backgroundmusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_o13ub")
 autoplay = true
+
+[editable path="CharacterManager3D"]
