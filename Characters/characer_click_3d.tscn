@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvdoki62xebsy"]
+[gd_scene load_steps=15 format=3 uid="uid://dvdoki62xebsy"]
 
 [ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c7vvbdd3qv8v2" path="res://scenes/bubble.tscn" id="4_omau8"]
 [ext_resource type="Script" path="res://Characters/sound_effects.gd" id="5_ne0q4"]
 [ext_resource type="AudioStream" uid="uid://ds0r7kvynxdew" path="res://sounds/c0_short footsteps.mp3" id="6_lux0q"]
+[ext_resource type="AudioStream" uid="uid://cqt1d0ekxufm4" path="res://sounds/UI.wav" id="7_1v3kh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
 resource_local_to_scene = true
@@ -116,6 +117,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402009, 0.958694, 0.02898
 [node name="SoundEffects" type="Node" parent="."]
 script = ExtResource("5_ne0q4")
 foot_sound = Array[AudioStream]([ExtResource("6_lux0q")])
+select_sound = ExtResource("7_1v3kh")
 
 [node name="FootSoundPlayer" type="AudioStreamPlayer" parent="SoundEffects"]
 

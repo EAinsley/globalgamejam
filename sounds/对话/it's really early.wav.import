@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwd4y7krhp0pl"
+path="res://.godot/imported/it's really early.wav-a50ae36745f8ea497d45792a94d20914.sample"
+
+[deps]
+
+source_file="res://sounds/对话/it's really early.wav"
+dest_files=["res://.godot/imported/it's really early.wav-a50ae36745f8ea497d45792a94d20914.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

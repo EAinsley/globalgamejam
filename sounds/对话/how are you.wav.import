@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bodbt0ladxf7g"
+path="res://.godot/imported/how are you.wav-e13c99ddfbd9f5e575f1f024fb04bcc3.sample"
+
+[deps]
+
+source_file="res://sounds/对话/how are you.wav"
+dest_files=["res://.godot/imported/how are you.wav-e13c99ddfbd9f5e575f1f024fb04bcc3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

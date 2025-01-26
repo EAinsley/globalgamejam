@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5rlfyi48564d"
+path="res://.godot/imported/not rally my thing.wav-387b1b3bac1d733f3fff8a9aae036c33.sample"
+
+[deps]
+
+source_file="res://sounds/语气/bad/not rally my thing.wav"
+dest_files=["res://.godot/imported/not rally my thing.wav-387b1b3bac1d733f3fff8a9aae036c33.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

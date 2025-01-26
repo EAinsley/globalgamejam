@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt8ou8rquaqbk"
+path="res://.godot/imported/I love so much.wav-7bab94f5a35b09c3d73e37a592d26e9c.sample"
+
+[deps]
+
+source_file="res://sounds/语气/good/I love so much.wav"
+dest_files=["res://.godot/imported/I love so much.wav-7bab94f5a35b09c3d73e37a592d26e9c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

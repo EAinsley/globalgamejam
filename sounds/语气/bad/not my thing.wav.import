@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cijw17fwjtyd0"
+path="res://.godot/imported/not my thing.wav-eae6eba3c5027662d897dd90d4945ce8.sample"
+
+[deps]
+
+source_file="res://sounds/语气/bad/not my thing.wav"
+dest_files=["res://.godot/imported/not my thing.wav-eae6eba3c5027662d897dd90d4945ce8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

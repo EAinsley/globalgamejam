@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://sw2a708woqq2"]
+[gd_scene load_steps=11 format=3 uid="uid://sw2a708woqq2"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_cfr1w"]
 [ext_resource type="Texture2D" uid="uid://bke1j1hel8i1o" path="res://pictures/character pictures/9.png" id="2_rpoow"]
+[ext_resource type="AudioStream" uid="uid://de3k2j18b71il" path="res://sounds/语气/good/I like it.wav" id="3_2wppj"]
+[ext_resource type="AudioStream" uid="uid://cijw17fwjtyd0" path="res://sounds/语气/bad/not my thing.wav" id="4_dtcx0"]
+[ext_resource type="AudioStream" uid="uid://c8jv0nkgku7cp" path="res://sounds/语气/neutral/yeah_neutral.wav" id="5_dtcx0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldfmt"]
 resource_local_to_scene = true
@@ -48,3 +51,8 @@ mesh = SubResource("QuadMesh_2wppj")
 
 [node name="SubViewport" parent="Dialogue" index="0"]
 disable_3d = true
+
+[node name="SoundEffects" parent="." index="5"]
+response_sound_good = Array[AudioStream]([ExtResource("3_2wppj")])
+response_sound_bad = Array[AudioStream]([ExtResource("4_dtcx0")])
+select_sound = ExtResource("5_dtcx0")

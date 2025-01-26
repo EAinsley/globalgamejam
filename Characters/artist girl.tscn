@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnonyioviem5"]
+[gd_scene load_steps=9 format=3 uid="uid://cnonyioviem5"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_wajq4"]
 [ext_resource type="Texture2D" uid="uid://dhv3a8rtvwo5e" path="res://pictures/character pictures/8.png" id="2_ao8ip"]
+[ext_resource type="AudioStream" uid="uid://vgjemplwerux" path="res://sounds/语气/neutral/ummmm_female.wav" id="3_ow26y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3t0j"]
 resource_local_to_scene = true
@@ -45,5 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0170055, -0.0405653, -0.01
 
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_cqt7n")
+
+[node name="SoundEffects" parent="." index="5"]
+select_sound = ExtResource("3_ow26y")
 
 [connection signal="area_exited" from="Bubble" to="." method="_on_bubble_area_exited"]

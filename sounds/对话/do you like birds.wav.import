@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bd8xsjnipfrph"
+path="res://.godot/imported/do you like birds.wav-6f59d9f708b2ae20180dd91d29b1c941.sample"
+
+[deps]
+
+source_file="res://sounds/对话/do you like birds.wav"
+dest_files=["res://.godot/imported/do you like birds.wav-6f59d9f708b2ae20180dd91d29b1c941.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
