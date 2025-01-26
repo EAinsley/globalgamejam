@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnonyioviem5"]
 
 [ext_resource type="PackedScene" uid="uid://dvdoki62xebsy" path="res://Characters/characer_click_3d.tscn" id="1_wajq4"]
-[ext_resource type="Texture2D" uid="uid://dhv3a8rtvwo5e" path="res://pictures/8.png" id="2_ao8ip"]
+[ext_resource type="Texture2D" uid="uid://dhv3a8rtvwo5e" path="res://pictures/character pictures/8.png" id="2_ao8ip"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3t0j"]
 resource_local_to_scene = true
