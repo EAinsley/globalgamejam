@@ -4,3 +4,12 @@
 
 [node name="CharacterManager3D" type="Node3D"]
 script = ExtResource("1_p16ir")
+
+[node name="GoalArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="GoalAreaShape" type="CollisionShape3D" parent="GoalArea"]
+
+[connection signal="body_entered" from="GoalArea" to="." method="_on_goal_area_body_entered"]
+[connection signal="body_exited" from="GoalArea" to="." method="_on_goal_area_body_exited"]
