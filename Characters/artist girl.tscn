@@ -24,7 +24,11 @@ viewport_path = NodePath("Dialogue/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow26y"]
 resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 no_depth_test = true
+shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_ba6ao")
 billboard_mode = 1
 billboard_keep_scale = true

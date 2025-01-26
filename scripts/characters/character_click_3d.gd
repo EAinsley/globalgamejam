@@ -15,10 +15,11 @@ var velocity_xy := Vector2(0.0, 0.0)
 var colliding_characters : Array[CharacterClick3D] = []
 var animationTime = 0.0
 var bubble_colliding_characters: Array[CharacterClick3D] = []
+@onready var push_area_collision_shape: CollisionShape3D = $PushArea/PushAreaCollisionShape
 
 @onready var interaction_distance_square = interaction_distance * interaction_distance
 @onready var appearance: MeshInstance3D = $Appearance
-@onready var sentence: Label = %Sentence
+@onready var sentence: RichTextLabel = %Sentence
 @onready var dialogue: Dialogue = $Dialogue
 @onready var bubble: Bubble = $Bubble
 
@@ -43,6 +44,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	selected = false
+	dialogue.visible = false
 
 func _process(delta: float) -> void:
 	animationTime += delta
