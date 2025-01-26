@@ -39,3 +39,6 @@ mesh = SubResource("QuadMesh_0jfm7")
 
 [node name="Dialogue" parent="." index="3"]
 mesh = SubResource("QuadMesh_5asno")
+
+[node name="SoundEffects" parent="." index="5"]
+response_sound_good = Array[AudioStream]([null])
