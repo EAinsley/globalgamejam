@@ -67,7 +67,6 @@ func _process(delta: float) -> void:
 			print("pushed away", bubble_colliding_characters)
 		else:
 			velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
-		
 	else:
 		velocity_xy = Vector2.ZERO
 		for character in colliding_characters:
