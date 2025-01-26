@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvdoki62xebsy"]
+[gd_scene load_steps=13 format=3 uid="uid://dvdoki62xebsy"]
 
 [ext_resource type="Script" uid="uid://byvd444xc8qn5" path="res://scripts/characters/character_click_3d.gd" id="1_1jsgr"]
 [ext_resource type="Texture2D" uid="uid://rru0n4ehkkhx" path="res://icon.svg" id="2_5cfqy"]
 [ext_resource type="Script" uid="uid://dy5kpa65lpalo" path="res://scripts/characters/dialogue.gd" id="3_jlg1v"]
 [ext_resource type="PackedScene" uid="uid://c7vvbdd3qv8v2" path="res://scenes/bubble.tscn" id="4_omau8"]
+[ext_resource type="Script" uid="uid://cfr16b55en10d" path="res://Characters/sound_effects.gd" id="5_ne0q4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cfqy"]
 resource_local_to_scene = true
@@ -109,6 +110,15 @@ one_shot = true
 
 [node name="Bubble" parent="." instance=ExtResource("4_omau8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402009, 0.958694, 0.0289819)
+
+[node name="SoundEffects" type="Node" parent="."]
+script = ExtResource("5_ne0q4")
+
+[node name="FootSoundPlayer" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="ResponsePlayer" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="SelectPlayer" type="AudioStreamPlayer" parent="SoundEffects"]
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="PushArea" to="." method="_on_push_area_area_entered"]
