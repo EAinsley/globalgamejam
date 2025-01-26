@@ -8,8 +8,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -62.0
-offset_top = -62.0
+offset_left = -40.0
+offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 auto_width = true
@@ -17,7 +17,6 @@ auto_height = true
 max_columns = 10
 same_column_width = true
 icon_mode = 0
-fixed_icon_size = Vector2i(180, 180)
 script = ExtResource("2_ioppk")
 
 [connection signal="item_selected" from="." to="." method="_on_item_selected"]

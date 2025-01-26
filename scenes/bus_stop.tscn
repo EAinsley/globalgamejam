@@ -1,20 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://c6qxy4htjxvto"]
+[gd_scene load_steps=16 format=3 uid="uid://c6qxy4htjxvto"]
 
-[ext_resource type="Script" uid="uid://ds0oe3qmynju5" path="res://scripts/bus_stop.gd" id="1_1dlwr"]
 [ext_resource type="ArrayMesh" uid="uid://ck3hpsm4gwrk1" path="res://graphics/3D/scene_around_busstop.obj" id="1_jt85a"]
-[ext_resource type="PackedScene" uid="uid://gqsl1o10s5uj" path="res://scenes/winning.tscn" id="2_cos2u"]
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="2_mt65r"]
+[ext_resource type="PackedScene" uid="uid://cnonyioviem5" path="res://Characters/artist girl.tscn" id="2_u06jw"]
 [ext_resource type="PackedScene" uid="uid://bic1v1g7feveo" path="res://Characters/business guy.tscn" id="3_p5or2"]
-[ext_resource type="PackedScene" uid="uid://c8jfl4rv57d56" path="res://Characters/punk guy.tscn" id="4_7faqw"]
-[ext_resource type="PackedScene" uid="uid://cvvqducin4lec" path="res://Characters/guy with a dog.tscn" id="5_7faqw"]
-[ext_resource type="PackedScene" uid="uid://dm835rxixf1t" path="res://Characters/orange sweater girl.tscn" id="5_cos2u"]
+[ext_resource type="PackedScene" uid="uid://f66tphprpsyk" path="res://Characters/oldlady.tscn" id="4_5bqq7"]
 [ext_resource type="ArrayMesh" uid="uid://dv17qux537ti7" path="res://graphics/3D/busstop_ceiling.obj" id="6_f2i2r"]
 [ext_resource type="ArrayMesh" uid="uid://d4g3j2qq42ay7" path="res://graphics/3D/busstop_wall_long.obj" id="7_0f0w2"]
 [ext_resource type="ArrayMesh" uid="uid://c3sk1ixpqk4qb" path="res://graphics/3D/busstop_wall.obj" id="8_2rhlr"]
 [ext_resource type="ArrayMesh" uid="uid://c0iodv4jk07ec" path="res://graphics/3D/busstop_sidewalk.obj" id="9_0f0w2"]
-[ext_resource type="PackedScene" uid="uid://btvuk3kqs6vsc" path="res://scenes/anction_list_ui.tscn" id="10_2rhlr"]
-[ext_resource type="PackedScene" uid="uid://bmnyx3nu78xpt" path="res://scenes/in_game_menu.tscn" id="14_u7wym"]
-[ext_resource type="AudioStream" uid="uid://dp32dxonsm2sv" path="res://sounds/c0_bus station2.wav" id="15_qtu5t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mt65r"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -29,9 +23,6 @@ sky = SubResource("Sky_u06jw")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7faqw"]
-size = Vector3(3.53656, 1.47217, 2.01477)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0f0w2"]
 data = PackedVector3Array(11, -0.0001, 0.5, -13, -0.0001, 0.5, 11, -0.0001, -7, 11, -0.0001, -7, -13, -0.0001, 0.5, -13, -0.0001, -7, 11, -0.0001, -7, -13, -0.0001, -7, 11, 4, -7, 11, 4, -7, -13, -0.0001, -7, -13, 4, -7, -13, -0.0001, 0.5, 11, -0.0001, 0.5, -13, -0.125, 0.5, -13, -0.125, 0.5, 11, -0.0001, 0.5, 11, -0.125, 0.5, -13, -0.125, 0.5, 11, -0.125, 0.5, -13, -0.125, 5.5, -13, -0.125, 5.5, 11, -0.125, 0.5, 11, -0.125, 5.5)
 
@@ -42,7 +33,6 @@ size = Vector3(0.25, 2, 1.8)
 size = Vector3(4.2, 2, 0.25)
 
 [node name="Node3D2" type="Node3D"]
-script = ExtResource("1_1dlwr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_p5or2")
@@ -52,27 +42,18 @@ transform = Transform3D(0.947768, 0.264118, -0.178821, 0, 0.560639, 0.82806, 0.3
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.849018, 0.528365, 0, -0.528365, 0.849018, 0.0188598, 3.09179, 3.64467)
+transform = Transform3D(1, 0, 0, 0, 0.913935, 0.40586, 0, -0.40586, 0.913935, 0.588623, 5.36327, 8.11955)
 
 [node name="CharacterManager3D" parent="." instance=ExtResource("2_mt65r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29913, 1.0302, 0)
-next_level = ExtResource("2_cos2u")
 
-[node name="GoalAreaShape" parent="CharacterManager3D/GoalArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12714, -0.0318975, -1.22817)
-shape = SubResource("BoxShape3D_7faqw")
+[node name="CharacterClick3D" parent="CharacterManager3D" instance=ExtResource("2_u06jw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4012, 0, 0)
 
-[node name="BusinessGuy" parent="CharacterManager3D" instance=ExtResource("3_p5or2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07001, 0, 0.484852)
+[node name="CharacterClick3D2" parent="CharacterManager3D" instance=ExtResource("3_p5or2")]
 
-[node name="DogGuy" parent="CharacterManager3D" instance=ExtResource("5_7faqw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8186, 0, 0)
-
-[node name="PunkGuy" parent="CharacterManager3D" instance=ExtResource("4_7faqw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2643, 0, -1.98386)
-
-[node name="OrangeGirl" parent="CharacterManager3D" instance=ExtResource("5_cos2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29414, 0, 1.10487)
+[node name="CharacterClick3D3" parent="CharacterManager3D" instance=ExtResource("4_5bqq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53628, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -142,15 +123,3 @@ shape = SubResource("BoxShape3D_0f0w2")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216183, 0.978096, -2.3585)
 shape = SubResource("BoxShape3D_2rhlr")
-
-[node name="ActionList" parent="." instance=ExtResource("10_2rhlr")]
-
-[node name="InGameMenu" parent="." instance=ExtResource("14_u7wym")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_qtu5t")
-autoplay = true
-
-[connection signal="won" from="CharacterManager3D" to="." method="_on_character_manager_3d_won"]
-
-[editable path="CharacterManager3D"]
