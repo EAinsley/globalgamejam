@@ -2,5 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dqoi6t47dm7xn" path="res://scripts/characters/character_manager_3d.gd" id="1_p16ir"]
 
-[node name="CharacterManager3D" type="Node3D"]
+[node name="CharacterManager3D" type="Node3D" groups=["CharacterManager"]]
 script = ExtResource("1_p16ir")
+
+[node name="GoalArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="GoalAreaShape" type="CollisionShape3D" parent="GoalArea"]
+
+[connection signal="body_entered" from="GoalArea" to="." method="_on_goal_area_body_entered"]
+[connection signal="body_exited" from="GoalArea" to="." method="_on_goal_area_body_exited"]

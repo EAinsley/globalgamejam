@@ -1,8 +1,14 @@
 extends Node3D
 class_name CharacterManager3D
 
+@export var next_level: PackedScene
+
+signal won(next_level: PackedScene)
+
 var character_picked : CharacterClick3D
 var action_picked: SmallTalk
+var charaters_number := 0
+var now_inside_number := 0
 var action_list_ui: ActionList : 
 	get:
 		if not action_list_ui:
@@ -10,6 +16,12 @@ var action_list_ui: ActionList :
 			if action_list_ui:
 				action_list_ui.item_selected.connect(_on_action_picked)
 		return action_list_ui
+		
+func register(character: CharacterClick3D):
+	print(character.name, " connected to manager")
+	character.picked.connect(_on_character_picked)
+	charaters_number += 1
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("release"):
@@ -48,3 +60,19 @@ func _on_action_picked(action_index: int) -> void:
 	action_picked = new_action
 	print("pick action", action_picked.name)
 	
+
+
+func _on_goal_area_body_entered(body: Node3D) -> void:
+	print("manager body entered: ", body.name)
+	if body is CharacterClick3D:
+		now_inside_number += 1
+		print("inside number add")
+		if now_inside_number >= charaters_number:
+			print("You win")
+			won.emit()
+
+
+func _on_goal_area_body_exited(body: Node3D) -> void:
+	print("manager body exited: ", body.name)
+	print("inside number deleted")
+	now_inside_number -= 1

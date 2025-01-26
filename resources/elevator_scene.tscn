@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://68lnmoq6g566"]
+[gd_scene load_steps=21 format=3 uid="uid://cpco8a1221kf8"]
 
 [ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/items/plant.png" id="1_olv36"]
 [ext_resource type="PackedScene" uid="uid://bv7mx0gm12rok" path="res://scenes/elevator_door.tscn" id="2_i7r5b"]

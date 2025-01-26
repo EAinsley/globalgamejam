@@ -36,8 +36,8 @@ func _init() -> void:
 func _enter_tree() -> void:
 	var parent = get_parent()
 	if parent is CharacterManager3D:
-		print("connect to parent")
-		picked.connect(parent._on_character_picked)
+		parent.register(self)
+
 
 func _ready() -> void:
 	selected = false
@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 				velocity_xy.x += delta_distance.x
 				velocity_xy.y += delta_distance.z
 			velocity_xy = velocity_xy.normalized() * avoid_speed
-			print("pushed away", bubble_colliding_characters)
+			#print("pushed away", bubble_colliding_characters)
 		else:
 			velocity_xy = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	else:
@@ -125,7 +125,7 @@ func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, n
 
 
 func _on_push_area_area_entered(area: Area3D) -> void:
-	print("detect other people by", name)
+	#print("detect other people by", name)
 	colliding_characters.push_back(area.get_parent())
 	
 
@@ -135,10 +135,10 @@ func _on_push_area_area_exited(area: Area3D) -> void:
 
 
 func _on_node_3d_area_entered(area: Area3D) -> void:
-	print("detect bubble enter")
+	#print("detect bubble enter")
 	bubble_colliding_characters.push_back(area.get_parent())
 
 
 func _on_bubble_area_exited(area: Area3D) -> void:
-	print("detect bubble exit")
+	#print("detect bubble exit")
 	bubble_colliding_characters.erase(area.get_parent())
