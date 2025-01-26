@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dubltiei0ntq4"]
+[gd_scene load_steps=26 format=3 uid="uid://dubltiei0ntq4"]
 
 [ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/items/plant.png" id="1_olv36"]
 [ext_resource type="PackedScene" path="res://scenes/elevator_door.tscn" id="2_i7r5b"]
@@ -112,6 +112,8 @@ action_list = Array[ExtResource("5_oc6ki")]([ExtResource("6_gpoxs")])
 response_list = Array[ExtResource("7_pha3a")]([SubResource("Resource_gpoxs"), SubResource("Resource_pha3a")])
 
 [node name="ActionList" parent="." instance=ExtResource("9_rumfv")]
+offset_left = -62.0
+offset_top = -62.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -128,8 +130,9 @@ shape = SubResource("ConcavePolygonShape3D_jbja3")
 
 [node name="InGameMenu" parent="." instance=ExtResource("12_0o5eg")]
 
-[connection signal="won" from="CharacterManager3D" to="Node3D" method="_on_character_manager_3d_won"]
-[connection signal="won" from="CharacterManager3D" to="Node3D2" method="_on_character_manager_3d_won"]
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_7iq7s")
 autoplay = true
+
+[connection signal="won" from="CharacterManager3D" to="Node3D" method="_on_character_manager_3d_won"]
+[connection signal="won" from="CharacterManager3D" to="Node3D2" method="_on_character_manager_3d_won"]
