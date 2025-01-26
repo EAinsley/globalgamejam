@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://c0ykiwxfvv4wb" path="res://graphics/3D/elevator_scene.obj" id="1_arhv6"]
 [ext_resource type="Texture2D" uid="uid://d2mai0mk3hyah" path="res://graphics/2D/defaultmetallic.png" id="2_va0gh"]
-[ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/plant.png" id="4_twtuf"]
+[ext_resource type="Texture2D" uid="uid://bonvt4hra2lv4" path="res://pictures/items/plant.png" id="4_twtuf"]
 [ext_resource type="PackedScene" path="res://scenes/elevator_door.tscn" id="5_c4ta5"]
 [ext_resource type="PackedScene" uid="uid://dtefnyaagiua2" path="res://Characters/character_manager_3d.tscn" id="6_kjhgt"]
 [ext_resource type="Resource" uid="uid://dlba7bdcobv4s" path="res://resources/fika_talk.tres" id="7_1c8xy"]
